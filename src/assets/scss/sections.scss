@@ -1,0 +1,7 @@
+.has-background {
+    &-dark, &-black, &-primary {
+        div, h1, h2, h3, h4, h5, h6, p, strong, a:not(.button) {
+            color: $white!important;
+        }
+    }
+}

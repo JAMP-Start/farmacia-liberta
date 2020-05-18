@@ -1,0 +1,644 @@
+{
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "example_section": []
+        },
+        "choices": {
+          "banner": {
+            "type": "Slice",
+            "fieldset": "Banner",
+            "description": "Banner with background image, caption and button",
+            "icon": "photo_size_select_large",
+            "non-repeat": {
+              "section_classes": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Classes",
+                  "placeholder": "classname1 classname2"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 2000,
+                    "height": null
+                  },
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Title"
+                }
+              },
+              "subtitle": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Subtitle"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, strong, em, hyperlink, list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Description"
+                }
+              },
+              "button_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Button Label",
+                  "placeholder": "Click here"
+                }
+              },
+              "button_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Button Link",
+                  "placeholder": "Select the link",
+                  "allowTargetBlank": true
+                }
+              },
+              "button_2_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Button 2 Label"
+                }
+              },
+              "button_2_link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Button 2 Link"
+                }
+              }
+            },
+            "repeat": {},
+            "display": "list"
+          },
+          "box_grid": {
+            "type": "Slice",
+            "fieldset": "Box Grid",
+            "description": "A grid of boxes with image icon and content",
+            "icon": "video_label",
+            "display": "list",
+            "non-repeat": {
+              "section_classes": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Classes",
+                  "placeholder": "classname1 classname 2"
+                }
+              }
+            },
+            "repeat": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 200
+                  },
+                  "thumbnails": [],
+                  "label": "Icon"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 800
+                  },
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Title"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Content"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Link"
+                }
+              },
+              "link_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Link Text"
+                }
+              }
+            }
+          },
+          "columns": {
+            "type": "Slice",
+            "fieldset": "Columns",
+            "description": "A row with dynamic columns",
+            "icon": "view_column",
+            "display": "grid",
+            "non-repeat": {
+              "section_classes": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Classes",
+                  "placeholder": "classname1 classname2"
+                }
+              }
+            },
+            "repeat": {
+              "size_xl": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "12",
+                    "11",
+                    "10",
+                    "9",
+                    "8",
+                    "7",
+                    "6",
+                    "5",
+                    "4",
+                    "3",
+                    "2",
+                    "1"
+                  ],
+                  "default_value": "12",
+                  "label": "Column Size (Extras Large Screens)",
+                  "placeholder": "Columns size for extra large screen size (optional)"
+                }
+              },
+              "size_lg": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "12",
+                    "11",
+                    "10",
+                    "9",
+                    "8",
+                    "7",
+                    "6",
+                    "5",
+                    "4",
+                    "3",
+                    "2",
+                    "1"
+                  ],
+                  "default_value": "12",
+                  "label": "Column Size (Large Screens)",
+                  "placeholder": "Columns size for large screen size (optional)"
+                }
+              },
+              "size_md": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "12",
+                    "11",
+                    "10",
+                    "9",
+                    "8",
+                    "7",
+                    "6",
+                    "5",
+                    "4",
+                    "3",
+                    "2",
+                    "1"
+                  ],
+                  "default_value": "12",
+                  "label": "Column Size (Medium Screens)",
+                  "placeholder": "Columns size for medium screen size (optional)"
+                }
+              },
+              "size__sm": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "12",
+                    "11",
+                    "10",
+                    "9",
+                    "8",
+                    "7",
+                    "6",
+                    "5",
+                    "4",
+                    "3",
+                    "2",
+                    "1"
+                  ],
+                  "default_value": "12",
+                  "label": "Column Size (Small Screens)",
+                  "placeholder": "Columns size for small screen size (optional)"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Content"
+                }
+              }
+            }
+          },
+          "content_section": {
+            "type": "Slice",
+            "fieldset": "Content Section",
+            "description": "Free content section",
+            "icon": "format_align_justify",
+            "display": "list",
+            "non-repeat": {
+              "section_classes": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Classes",
+                  "placeholder": "classname1 classname2"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Title"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Content",
+                  "labels": [
+                    "special"
+                  ]
+                }
+              },
+              "button_link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Button Link",
+                  "placeholder": "Add a link"
+                }
+              },
+              "button_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Button Label",
+                  "placeholder": "Click here"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "content_type_loop": {
+            "type": "Slice",
+            "fieldset": "Content Type Loop",
+            "description": "Content type elements loop",
+            "icon": "view_list",
+            "display": "list",
+            "non-repeat": {
+              "section_classes": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Classes",
+                  "placeholder": "classname1 classname 2"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Content"
+                }
+              },
+              "content_type": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "post",
+                    "service",
+                    "page",
+                    "product"
+                  ],
+                  "default_value": "post",
+                  "label": "Content Type",
+                  "placeholder": "Select a content type"
+                }
+              },
+              "display_as_carousel": {
+                "type": "Boolean",
+                "config": {
+                  "placeholder_false": "No",
+                  "placeholder_true": "Yes",
+                  "default_value": false,
+                  "label": "Display as Carousel"
+                }
+              },
+              "columns_per_row": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "10",
+                    "9",
+                    "8",
+                    "7",
+                    "6",
+                    "5",
+                    "4",
+                    "3",
+                    "2",
+                    "1"
+                  ],
+                  "label": "Columns per row",
+                  "placeholder": "Select columns per row"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image_gallery": {
+            "type": "Slice",
+            "fieldset": "Image Gallery",
+            "description": "Image Gallery with a title and a caption for each image",
+            "icon": "photo_library",
+            "non-repeat": {
+              "gallery_id": {
+                "type": "Text",
+                "config": {
+                  "label": "Gallery ID"
+                }
+              },
+              "section_classes": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Classes",
+                  "placeholder": "classname1 classname2"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Title"
+                }
+              },
+              "title_show": {
+                "type": "Boolean",
+                "config": {
+                  "placeholder_false": "Hide",
+                  "placeholder_true": "Show",
+                  "default_value": false,
+                  "label": "Show/Hide Title"
+                }
+              },
+              "type": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "grid",
+                    "slider",
+                    "carousel"
+                  ],
+                  "label": "Type",
+                  "placeholder": "Select the type of the image gallery"
+                }
+              }
+            },
+            "repeat": {
+              "caption": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, strong, em, hyperlink, list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Caption"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 2000,
+                    "height": null
+                  },
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            },
+            "display": "list"
+          },
+          "popup": {
+            "type": "Slice",
+            "fieldset": "Popup",
+            "description": "A popup component with trigger type",
+            "icon": "aspect_ratio",
+            "display": "list",
+            "non-repeat": {
+              "id": {
+                "type": "Text",
+                "config": {
+                  "label": "Id"
+                }
+              },
+              "trigger_type": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "button",
+                    "delay",
+                    "exit-intent"
+                  ],
+                  "default_value": "button",
+                  "label": "Trigger Type"
+                }
+              },
+              "trigger_button_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Trigger Button Label"
+                }
+              },
+              "trigger_delay": {
+                "type": "Number",
+                "config": {
+                  "label": "Trigger Delay (in milliseconds)",
+                  "placeholder": "1000"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3, heading4, heading5, heading6",
+                  "label": "Title"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Content"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "two_columns_with_image_section": {
+            "type": "Slice",
+            "fieldset": "Two Columns with Image Section",
+            "description": "Section with an image column and a content column with an optional button",
+            "icon": "art_track",
+            "display": "list",
+            "non-repeat": {
+              "section_classes": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Classes",
+                  "placeholder": "classname1 classname2"
+                }
+              }
+            },
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1500
+                  },
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "columns_order": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "Image Left | Content Right",
+                    "Content Left | Image Right"
+                  ],
+                  "default_value": "Image Left | Content Right",
+                  "label": "Columns Order"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Content"
+                }
+              },
+              "button_link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Button Link",
+                  "placeholder": "Select a link"
+                }
+              },
+              "button_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Button Label",
+                  "placeholder": "Click here"
+                }
+              }
+            }
+          },
+          "video_section": {
+            "type": "Slice",
+            "fieldset": "Video Section",
+            "description": "Section containing title, description and a video embedded",
+            "icon": "ondemand_video",
+            "display": "list",
+            "non-repeat": {
+              "section_classes": {
+                "type": "Text",
+                "config": {
+                  "label": "Section Classes",
+                  "placeholder": "classname1 classname2"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Content"
+                }
+              },
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  },
+  "SEO": {
+    "seo_title": {
+      "type": "Text",
+      "config": {
+        "label": "SEO Title"
+      }
+    },
+    "seo_description": {
+      "type": "Text",
+      "config": {
+        "label": "SEO Description"
+      }
+    },
+    "seo_keywords": {
+      "type": "Text",
+      "config": {
+        "label": "SEO Keywords"
+      }
+    },
+    "seo_image": {
+      "type": "Link",
+      "config": {
+        "select": "media",
+        "label": "SEO Image"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+    "Main" : {
+      "uid" : {
+        "type" : "UID",
+        "config" : {
+          "label" : "Strings ID"
+        }
+      },
+      "strings_title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1",
+          "label" : "Strings Title"
+        }
+      },
+      "string" : {
+        "type" : "Group",
+        "config" : {
+          "fields" : {
+            "key" : {
+              "type" : "Text",
+              "config" : {
+                "label" : "Key"
+              }
+            },
+            "value" : {
+              "type" : "Text",
+              "config" : {
+                "label" : "Value"
+              }
+            }
+          },
+          "label" : "String"
+        }
+      }
+    }
+  }

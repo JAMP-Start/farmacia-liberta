@@ -1,0 +1,83 @@
+{
+    "Main" : {
+      "uid" : {
+        "type" : "UID",
+        "config" : {
+          "label" : "uid",
+          "placeholder" : "Footer"
+        }
+      },
+      "footer_bottom" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph, preformatted, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+          "allowTargetBlank" : true,
+          "label" : "Footer Bottom",
+          "placeholder" : "Footer bottom bar (copyright and brand info)"
+        }
+      },
+      "body" : {
+        "type" : "Slices",
+        "fieldset" : "Slice zone",
+        "config" : {
+          "labels" : {
+            "navigation" : [ ]
+          },
+          "choices" : {
+            "navigation" : {
+              "type" : "Slice",
+              "fieldset" : "Navigation",
+              "description" : "A navigation menu",
+              "icon" : "playlist_play",
+              "display" : "list",
+              "non-repeat" : { },
+              "repeat" : {
+                "menu" : {
+                  "type" : "Link",
+                  "config" : {
+                    "select" : "document",
+                    "customtypes" : [ "menu" ],
+                    "label" : "Menu",
+                    "placeholder" : "Select an existing menu"
+                  }
+                }
+              }
+            },
+            "content_section" : {
+              "type" : "Slice",
+              "fieldset" : "Content Section",
+              "description" : "Free content section",
+              "icon" : "format_align_justify",
+              "display" : "list",
+              "non-repeat" : {
+                "content" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                    "allowTargetBlank" : true,
+                    "label" : "Content"
+                  }
+                },
+                "button_link" : {
+                  "type" : "Link",
+                  "config" : {
+                    "allowTargetBlank" : true,
+                    "label" : "Button Link",
+                    "placeholder" : "Add a link"
+                  }
+                },
+                "button_label" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Button Label",
+                    "placeholder" : "Click here"
+                  }
+                }
+              },
+              "repeat" : { }
+            }
+          }
+        }
+      }
+    }
+  }

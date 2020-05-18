@@ -1,0 +1,23 @@
+.title {
+    &--special {
+        position: relative;
+        h2{
+            position:relative;
+        &:after {
+            content: '';
+            width: 2rem;
+            height: 2px;
+            background-color: black;
+            display: inline-block;
+            margin-left: 1rem;
+        }}
+        span {
+            position: absolute;
+            top: -1rem;
+            margin-left: 1rem;
+            font-size: 4rem;
+            opacity: .2;
+            font-weight: 700;
+        }
+    }
+}
