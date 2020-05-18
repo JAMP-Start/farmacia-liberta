@@ -15,7 +15,6 @@ import { socialStore } from '~/store'
 })
 export default class SocialIconsComponent extends Vue {
   get socialList(): any {
-    console.log(socialStore)
     return socialStore.data
   }
 

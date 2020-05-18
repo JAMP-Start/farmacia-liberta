@@ -1,7 +1,14 @@
-.has-background {
-    &-dark, &-black, &-primary {
+.section {
+    margin: 2.5rem 0;
+}
+
+.has-background, .has-gradient {
+    &-dark, &-black, &-primary, &-left-to-right--blue {
         div, h1, h2, h3, h4, h5, h6, p, strong, a:not(.button) {
             color: $white!important;
+        }
+        p {
+            color: $primary-lighter!important;
         }
     }
 }
@@ -17,5 +24,8 @@
     }
     &.has-gradient-left-to-right .overlay {
         background: transparent linear-gradient(90deg, $primary 0%, rgba($primary,0) 100%);
+    }
+    &.has-gradient-left-to-right--blue {
+        background: transparent linear-gradient(90deg, $primary 0%, $primary-light 100%);
     }
 }

@@ -62,6 +62,7 @@ export default class JLinkComponent extends Vue {
       flex-flow: row wrap;
       align-items: center;
       justify-content: center;
+      font-weight: 400!important;
       .icon {
         margin-right: .5rem;
       }
