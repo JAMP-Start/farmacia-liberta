@@ -1,24 +1,7 @@
 <template lang="pug">
   header.is-sticky
-    .topbar
-      .columns.container
-        .topbar__left.column.is-8.has-text-centered.has-text-left-desktop(v-if="headerData.topbar_left")
-          span
-            span.icon.jicon
-              i.hours
-            span Lun-Ven 8.30/13.00 - 15.00/19.30
-          a(href="tel:+39043440493")
-            span.icon.jicon
-              i.phone2
-            span +39 0434 40493
-        //-   prismic-rich-text(:field="headerData.topbar_left")
-        //- .topbar__center.column.has-text-centered(v-if="headerData.topbar_center")
-        //-   prismic-rich-text(:field="headerData.topbar_center")
-        .topbar__right.column.is-4.has-text-centered.has-text-right-desktop(v-if="headerData.topbar_right")
-          SocialIcons
-          //- prismic-rich-text(:field="headerData.topbar_right")
-    nav.navbar(role="navigation", aria-label="main navigation")
-      .container
+    .container
+      nav.navbar(role="navigation", aria-label="main navigation")
         .navbar-brand
           nuxt-link.navbar-item(to="/")
             prismic-image.logo(:field="headerData.logo")
@@ -93,14 +76,9 @@ export default class TheHeaderComponent extends Vue {
 </script>
 
 <style lang="scss">
-.topbar {
+header {
   background-color: $white;
-  z-index: 99;
-  position: relative;
-  box-shadow: 0px 3px 16px $primary-lighter;
-  .columns {
-    margin-bottom: 0;
-  }
+  box-shadow: 0px 3px 16px rgba($primary-lighter, .2);
 }
 .is-sticky {
   position: sticky;
@@ -115,21 +93,27 @@ export default class TheHeaderComponent extends Vue {
 
 .nav-item {
   font-weight: 600;
-  padding: 2rem;
+  padding: 1rem 2rem;
   :after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     content: '';
     width: 42px;
     height: 3px;
     background-color: transparent;
     display: block;
-    margin: 0 auto;
-    margin-top: .4rem;
+    margin-top: .5rem;
   }
   &.nuxt-link-exact-active {
     :after {
       background-color: $secondary!important;
     }
   }
+}
+
+.navbar-brand {
+  margin: 2rem 0;
 }
 
 @media screen and (min-width: 1024px) {

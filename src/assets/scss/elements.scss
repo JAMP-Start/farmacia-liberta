@@ -44,3 +44,43 @@ figure.image-cover {
     }
   }
 }
+
+.m, .p {
+  @for $i from 1 through 6 {
+    &-#{$i} {
+      margin: .5rem * $i;
+    }
+  }
+  @for $i from 1 through 6 {
+    &y-#{$i} {
+      margin-top: .5rem * $i;
+      margin-bottom: .5rem * $i;
+    }
+  }
+  @for $i from 1 through 6 {
+    &x-#{$i} {
+      margin-left: .5rem * $i;
+      margin-right: .5rem * $i;
+    }
+  }
+  @for $i from 1 through 6 {
+    &t-#{$i} {
+      margin-top: .5rem * $i;
+    }
+  }
+  @for $i from 1 through 6 {
+    &b-#{$i} {
+      margin-bottom: .5rem * $i;
+    }
+  }
+  @for $i from 1 through 6 {
+    &l-#{$i} {
+      margin-left: .5rem * $i;
+    }
+  }
+  @for $i from 1 through 6 {
+    &r-#{$i} {
+      margin-right: .5rem * $i;
+    }
+  }
+}

@@ -24,3 +24,10 @@ export default class NavigationMenuComponent extends Vue {
 
 }
 </script>
+
+<style lang="scss" scoped>
+.menu .menu-list a {
+  padding-left: 0;
+  padding-right: 0;
+}
+</style>

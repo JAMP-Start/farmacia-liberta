@@ -1,5 +1,6 @@
 <template lang="pug">
   .jampstart
+    TheTopbar
     TheHeader
     nuxt
     TheFooter
@@ -10,11 +11,13 @@ import { Component, Vue } from 'nuxt-property-decorator'
 
 import TheHeader from '~/components/common/TheHeader.vue'
 import TheFooter from '~/components/common/TheFooter.vue'
+import TheTopbar from '~/components/common/TheTopbar.vue'
 
 @Component({
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    TheTopbar
   }
 })
 export default class DefaultLayout extends Vue { }

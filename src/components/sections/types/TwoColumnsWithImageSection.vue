@@ -1,14 +1,14 @@
 <template lang="pug">
-  section.section(:class="[primary.section_classes, {'is-paddingless': primary.image_as_background}]")
+  section.section.is-large(:class="[primary.section_classes, {'is-paddingless': primary.image_as_background}]")
     .content(:class="primary.image_as_background ? 'container-fluid' : 'container'")
       .columns(v-for="(item, index) in items",
         :key="index",
-        :class="{ 'columns--reverse': item.columns_order==='Content Left | Image Right' }")
+        :class="[{ 'columns--reverse': item.columns_order === 'Content Left | Image Right', 'is-large': primary.image_as_background }]")
         .column.is-5
           figure(:class="{'image-cover': primary.image_as_background}")
             picture
               prismic-image(:field="item.image")
-        .column.is-7(style="padding: 2rem;")
+        .column.is-auto.px-6(style="align-self: center;")
           prismic-rich-text(:field="item.content")
           JLink(:linkUrl="item.button_link", linkClasses="button") {{item.button_label}}
 </template>
@@ -51,5 +51,8 @@ export default class TwoColumnsWithImageSectionComponent extends Vue {
 }
 .columns--reverse {
   flex-direction: row-reverse;
+}
+.columns.is-large {
+  min-height: 75vh;
 }
 </style>

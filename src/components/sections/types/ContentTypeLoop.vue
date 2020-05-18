@@ -3,6 +3,7 @@
     .container
       .content
         prismic-rich-text(:field="primary.content")
+        JLink(:linkUrl="primary.button_link" linkClasses="link" linkIcon="arrow") {{ primary.button_text }}
       .swiper-container#carousel(v-if="primary.display_as_carousel")
         .swiper-wrapper
           .swiper-slide(v-for="(item, index) in items" :key="index")
@@ -29,6 +30,7 @@
                 prismic-rich-text(v-if="item.data.title" :field="item.data.title")
                 prismic-rich-text(v-if="item.data.content" :field="item.data.content")
                 JLink(:linkToResolve="item", linkClasses="button") {{ strings.discoverMore }}
+        JLink(:linkUrl="primary.button_link" linkClasses="button" linkIcon="arrow") {{ primary.button_text }}
 
 </template>
 
