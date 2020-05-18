@@ -1,14 +1,16 @@
 <template lang="pug">
   section.section(:class="primary.section_classes")
     .container
+      .content
+        prismic-rich-text(:field="primary.content")
       .columns.is-multiline
         div.column.is-4-desktop.is-6-tablet.is-1(v-for="(item, index) in items", :key="index")
-          .box
-            article.media.media-centered
+          .box.is-shadowless
+            article.media.is-block
               .media-image(v-if="item.image.url")
                 figure.image
                   prismic-image(:field="item.image")
-              .media-left.media-icon(v-if="item.icon.url")
+              .media-icon(v-if="item.icon.url")
                 figure.image.is-128x128
                   prismic-image(:field="item.icon")
               .media-content.content

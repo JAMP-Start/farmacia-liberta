@@ -2,18 +2,26 @@
   header.is-sticky
     .topbar
       .columns.container
-        .topbar__left.column.has-text-centered.has-text-left-desktop(v-if="headerData.topbar_left")
-          prismic-rich-text(:field="headerData.topbar_left")
-        .topbar__center.column.has-text-centered(v-if="headerData.topbar_center")
-          prismic-rich-text(:field="headerData.topbar_center")
-        .topbar__right.column.has-text-centered.has-text-right-desktop(v-if="headerData.topbar_right")
+        .topbar__left.column.is-8.has-text-centered.has-text-left-desktop(v-if="headerData.topbar_left")
+          span
+            span.icon.jicon
+              i.hours
+            span Lun-Ven 8.30/13.00 - 15.00/19.30
+          a(href="tel:+39043440493")
+            span.icon.jicon
+              i.phone2
+            span +39 0434 40493
+        //-   prismic-rich-text(:field="headerData.topbar_left")
+        //- .topbar__center.column.has-text-centered(v-if="headerData.topbar_center")
+        //-   prismic-rich-text(:field="headerData.topbar_center")
+        .topbar__right.column.is-4.has-text-centered.has-text-right-desktop(v-if="headerData.topbar_right")
           SocialIcons
-          prismic-rich-text(:field="headerData.topbar_right")
+          //- prismic-rich-text(:field="headerData.topbar_right")
     nav.navbar(role="navigation", aria-label="main navigation")
       .container
         .navbar-brand
           nuxt-link.navbar-item(to="/")
-            prismic-image(:field="headerData.logo")
+            prismic-image.logo(:field="headerData.logo")
           a.navbar-burger.burger(role="button",
             aria-label="menu",
             aria-expanded="false",
@@ -23,7 +31,7 @@
             span(aria-hidden="true")
             span(aria-hidden="true")
             span(aria-hidden="true")
-        .navbar-menu(:class="{ 'is-active': toggleMenu }")
+        .navbar-end(:class="{ 'is-active': toggleMenu }")
           .navbar-start
             .navbar-item.is-hoverable(v-for="(item, index) in menu",
               :key="index",
@@ -43,13 +51,6 @@
                       :key="index + index2 + index3")
                       JLink(:linkUrl="item3.nav_link",
                       :linkIcon="item3.nav_icon") {{ item3.nav_text }}
-          .navbar-end
-            .navbar-item
-              .buttons
-                JLink(:linkUrl="{url: 'https://google.com'}" linkClasses="button is-primary")
-                  strong Sign Up
-                JLink(:linkUrl="{url: 'https://google.it'}" linkClasses="button is-light")
-                  strong Log In
 </template>
 
 <script lang="ts">
@@ -93,7 +94,10 @@ export default class TheHeaderComponent extends Vue {
 
 <style lang="scss">
 .topbar {
-  background: $light;
+  background-color: $white;
+  z-index: 99;
+  position: relative;
+  box-shadow: 0px 3px 16px $primary-lighter;
   .columns {
     margin-bottom: 0;
   }
@@ -102,6 +106,30 @@ export default class TheHeaderComponent extends Vue {
   position: sticky;
   top: 0;
   z-index: 2;
+}
+
+.logo {
+  width: 100%;
+  min-height: 50px;
+}
+
+.nav-item {
+  font-weight: 600;
+  padding: 2rem;
+  :after {
+    content: '';
+    width: 42px;
+    height: 3px;
+    background-color: transparent;
+    display: block;
+    margin: 0 auto;
+    margin-top: .4rem;
+  }
+  &.nuxt-link-exact-active {
+    :after {
+      background-color: $secondary!important;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {

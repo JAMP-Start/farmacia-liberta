@@ -19,12 +19,14 @@ export default class ContactsPage extends Vue {
 
   data: any = {}
 
-  async asyncData({ app }): Promise<any> {
+  async asyncData({ app, error }): Promise<any> {
     try {
       const { data } = await app.$prismic.api.getSingle('contacts')
+      console.log(data)
       return { data }
     } catch (e) {
       console.error(e)
+      error({ statusCode: 404, message: 'Contact Page Not Found' })
     }
   }
 

@@ -1,13 +1,16 @@
 .title {
     &--special {
         position: relative;
-        h2{
+        h2 {
             position:relative;
+            color: $primary;
+            z-index: 1;
+            padding-bottom: 2.5rem;
         &:after {
             content: '';
             width: 2rem;
             height: 2px;
-            background-color: black;
+            background-color: $secondary;
             display: inline-block;
             margin-left: 1rem;
         }}
@@ -16,8 +19,74 @@
             top: -1rem;
             margin-left: 1rem;
             font-size: 4rem;
-            opacity: .2;
+            color: $lighter;
             font-weight: 700;
+            z-index: 0;
+        }
+    }
+}
+
+.content ul {
+    margin-left: 0;
+    line-height: 2;
+    li {
+        list-style-type: none;
+        padding-left: 2rem;
+        position: relative;
+        &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $primary;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px $primary;
+        }
+    }
+}
+
+.jicon {
+    i {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        &.email {
+            background-image: url('/svg/email.svg');
+        }
+        &.email2 {
+            background-image: url('/svg/email2.svg');
+        }
+        &.phone {
+            background-image: url('/svg/phone.svg');
+        }
+        &.phone2 {
+            background-image: url('/svg/phone2.svg');
+        }
+        &.hours {
+            background-image: url('/svg/hours.svg');
+        }
+        &.pin {
+            background-image: url('/svg/pin.svg');
+        }
+        &.facebook {
+            background-image: url('/svg/facebook.svg');
+        }
+        &.instagram {
+            background-image: url('/svg/instagram.svg');
+        }
+        &.linkedin {
+            background-image: url('/svg/linkedin.svg');
+        }
+        &.whatsapp {
+            background-image: url('/svg/whatsapp.svg');
         }
     }
 }

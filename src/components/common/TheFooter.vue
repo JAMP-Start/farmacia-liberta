@@ -1,5 +1,5 @@
 <template lang="pug">
-  footer.footer
+  footer.footer.has-background-light
     .container
       .footer__columns.columns
         .column(v-for="(column, index) in footerData.body", :key="index")
@@ -32,9 +32,13 @@ export default class TheFooterComponent extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .footer {
   padding: 3rem 1.5rem 1.5rem 1.5rem;
+  img {
+    max-width: 245px;
+    max-height: 45px;
+  }
   &__bottom {
     border-top: 1px solid;
     padding-top: 1.5rem;

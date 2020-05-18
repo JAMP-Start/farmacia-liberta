@@ -1,8 +1,8 @@
 {
-  "name": "jamp-start",
+  "name": "farmacia-liberta",
   "version": "1.0.0",
-  "description": "Nuxt website boilerplate with Prismic",
-  "author": "Alessio Zanut",
+  "description": "Farmacia Libertà website.",
+  "author": "Andrea Vigani",
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
@@ -21,7 +21,6 @@
     "lodash": "^4.17.15",
     "moment": "^2.25.3",
     "nuxt": "^2.12.2",
-    "nuxt-i18n": "^6.11.0",
     "nuxt-property-decorator": "^2.7.2",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^2.7.1",

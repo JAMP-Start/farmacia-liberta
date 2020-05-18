@@ -1,4 +1,4 @@
-# jamp-start
+# farmacia-libertà
 
 > Nuxt website boilerplate with Prismic
 

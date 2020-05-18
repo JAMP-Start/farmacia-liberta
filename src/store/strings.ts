@@ -14,6 +14,7 @@ export default class StringsModule extends VuexModule {
   @MutationAction({ mutate: ['strings'] })
   async setStrings(lang): Promise<any> {
     const stringsData = await $prismic.api.getSingle('strings', { lang })
+    console.log(stringsData)
     const strings = stringsData.data.string.reduce((obj, item) => Object.assign(obj, { [item.key]: item.value }), {})
     return { strings }
   }

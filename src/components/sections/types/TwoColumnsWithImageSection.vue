@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.section(:class="primary.section_classes")
+  section.section(:class="[primary.section_classes, {'is-paddingless': primary.image_as_background}]")
     .content(:class="primary.image_as_background ? 'container-fluid' : 'container'")
       .columns(v-for="(item, index) in items",
         :key="index",
@@ -8,7 +8,7 @@
           figure(:class="{'image-cover': primary.image_as_background}")
             picture
               prismic-image(:field="item.image")
-        .column.is-7
+        .column.is-7(style="padding: 2rem;")
           prismic-rich-text(:field="item.content")
           JLink(:linkUrl="item.button_link", linkClasses="button") {{item.button_label}}
 </template>

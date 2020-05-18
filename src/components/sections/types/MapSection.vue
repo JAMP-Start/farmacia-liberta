@@ -1,12 +1,6 @@
 <template lang="pug">
   div
-    strong iframe for single marker
     div.map__wrapper(v-if="primary.map_iframe" v-html="$prismic.asText(primary.map_iframe)")
-    div or for multiple markers
-    div Primary:
-      code {{ primary }}
-    div Items:
-      code {{ items }}
 </template>
 
 <script lang="ts">

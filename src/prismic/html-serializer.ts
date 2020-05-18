@@ -6,12 +6,15 @@ export default (type: any, element: any, content: any, children: any) => {
   if (type === RichText.Elements.preformatted) {
     return `${element.text}`
   }
+  // if (type === RichText.Elements.heading2) {
+  //   if (element.spans.length && element.spans[0].data.label === 'special') {
+  //     return `<div class="title--special"><h2>${element.text}</h2><span>${element.text}</span></div>`
+  //   } else {
+  //     return `<h2>${children.join('')}</h2>`
+  //   }
+  // }
   if (type === RichText.Elements.heading2) {
-    if (element.spans.length && element.spans[0].data.label === 'special') {
-      return `<div class="title--special"><h2>${element.text}</h2><span>${element.text}</span></div>`
-    } else {
-      return `<h2>${children.join('')}</h2>`
-    }
+    return `<div class="title--special"><h2>${element.text}</h2><span>${element.text}</span></div>`
   }
   // Generate links to Prismic Documents as <router-link> components
   // Present by default, it is recommended to keep this

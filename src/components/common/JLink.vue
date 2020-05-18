@@ -1,5 +1,4 @@
 <template lang="pug">
-  //- Add i18n check localePath
   nuxt-link(v-if="!isExternal && isSet",
     :to="getLinkUrl(linkUrl)",
     :class="[linkClasses, { 'has-icon': linkIcon }]")
@@ -11,8 +10,8 @@
     :href="getLinkUrl(linkUrl)",
     :class="[linkClasses, { 'has-icon': linkIcon }]",
     :target="linkUrl.target || false")
-      span.icon.is-medium(v-if="linkIcon")
-        i(class="fa-2x" :class="linkIcon")
+      span.icon.jicon(v-if="linkIcon")
+        i(:class="linkIcon")
       span
         slot
 </template>

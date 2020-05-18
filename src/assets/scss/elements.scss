@@ -1,5 +1,21 @@
 .button {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 290486px;
+  padding-left: calc(1em + .25em);
+  padding-right: calc(1em + .25em);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: .9rem;
+  &.is-secondary {
+    background-color: $secondary;
+    color: $white;
+    border-color: $secondary;
+    &.is-outlined {
+      background-color: transparent;
+      border-color: $secondary;
+      color: $secondary;
+    }
+  }
 }
 
 .media-centered {
