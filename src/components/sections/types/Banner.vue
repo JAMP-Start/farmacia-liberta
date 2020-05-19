@@ -46,26 +46,3 @@ export default class BannerComponent extends Vue {
 
 }
 </script>
-
-<style lang="scss" scoped>
-.hero {
-  position: relative;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  &.is-dark h1 {
-    color: $white;
-  }
-
-  &:before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    content: "";
-  }
-}
-</style>

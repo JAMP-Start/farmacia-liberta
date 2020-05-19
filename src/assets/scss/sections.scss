@@ -1,5 +1,27 @@
-.section {
-    margin: 2.5rem 0;
+.hero {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    &.is-dark h1 {
+      color: $white;
+      font-size: 3rem;
+    }
+  
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      content: "";
+    }
+  }
+
+.has-text-secondary {
+    color: $secondary;
 }
 
 .has-background, .has-gradient {
@@ -9,6 +31,18 @@
         }
         p {
             color: $primary-lighter!important;
+        }
+    }
+    &-secondary {
+        color: $primary;
+        &-1 { 
+            background-color: $secondary-1;
+        }
+        &-2 { 
+            background-color: $secondary-2;
+        }
+        &-3 { 
+            background-color: $secondary-3; 
         }
     }
 }

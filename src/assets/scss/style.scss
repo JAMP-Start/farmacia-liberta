@@ -7,3 +7,7 @@ body {
   text-rendering: optimizeLegibility;
   font-family: $font-primary;
 }
+
+* {
+  box-sizing: border-box;
+}

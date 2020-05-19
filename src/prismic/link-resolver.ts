@@ -4,7 +4,7 @@ const linkResolver = (doc: any): string => {
   }
 
   if (doc.type === 'post') {
-    return '/blog/' + doc.uid
+    return '/eventi/' + doc.uid
   }
 
   return '/not-found'

@@ -36,6 +36,9 @@ margin-bottom: 1rem;
 }
 
 figure.image-cover {
+  position: relative;
+  height: 100%;
+  margin: 0;
   picture {
     position: absolute;
     top: 0;
@@ -52,42 +55,85 @@ figure.image-cover {
   }
 }
 
-.m, .p {
-  @for $i from 1 through 6 {
+.swiper-container {
+  width: 100%;
+}
+
+.m {
+  @for $i from 0 through 6 {
     &-#{$i} {
-      margin: .5rem * $i;
+      margin: .5rem * $i!important;
     }
   }
-  @for $i from 1 through 6 {
+  @for $i from 0 through 6 {
     &y-#{$i} {
-      margin-top: .5rem * $i;
-      margin-bottom: .5rem * $i;
+      margin-top: .5rem * $i!important;
+      margin-bottom: .5rem * $i!important;
     }
   }
-  @for $i from 1 through 6 {
+  @for $i from 0 through 6 {
     &x-#{$i} {
-      margin-left: .5rem * $i;
-      margin-right: .5rem * $i;
+      margin-left: .5rem * $i!important;
+      margin-right: .5rem * $i!important;
     }
   }
-  @for $i from 1 through 6 {
+  @for $i from 0 through 6 {
     &t-#{$i} {
-      margin-top: .5rem * $i;
+      margin-top: .5rem * $i!important;
     }
   }
-  @for $i from 1 through 6 {
+  @for $i from 0 through 6 {
     &b-#{$i} {
-      margin-bottom: .5rem * $i;
+      margin-bottom: .5rem * $i!important;
     }
   }
-  @for $i from 1 through 6 {
+  @for $i from 0 through 6 {
     &l-#{$i} {
-      margin-left: .5rem * $i;
+      margin-left: .5rem * $i!important;
     }
   }
-  @for $i from 1 through 6 {
+  @for $i from 0 through 6 {
     &r-#{$i} {
-      margin-right: .5rem * $i;
+      margin-right: .5rem * $i!important;
+    }
+  }
+}
+.p {
+  @for $i from 0 through 6 {
+    &-#{$i} {
+      padding: .5rem * $i!important;
+    }
+  }
+  @for $i from 0 through 6 {
+    &y-#{$i} {
+      padding-top: .5rem * $i!important;
+      padding-bottom: .5rem * $i!important;
+    }
+  }
+  @for $i from 0 through 6 {
+    &x-#{$i} {
+      padding-left: .5rem * $i!important;
+      padding-right: .5rem * $i!important;
+    }
+  }
+  @for $i from 0 through 6 {
+    &t-#{$i} {
+      padding-top: .5rem * $i!important;
+    }
+  }
+  @for $i from 0 through 6 {
+    &b-#{$i} {
+      padding-bottom: .5rem * $i!important;
+    }
+  }
+  @for $i from 0 through 6 {
+    &l-#{$i} {
+      padding-left: .5rem * $i!important;
+    }
+  }
+  @for $i from 0 through 6 {
+    &r-#{$i} {
+      padding-right: .5rem * $i!important;
     }
   }
 }

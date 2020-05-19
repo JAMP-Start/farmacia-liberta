@@ -1,16 +1,17 @@
 <template lang="pug">
   section.section.gallery(:class="`gallery--${primary.type} ${primary.section_classes}`")
-    .gallery__title.content
-      prismic-rich-text(:field="primary.title")
-    .gallery__images.swiper-container(:id="primary.gallery_id")
-      .swiper-wrapper
-        figure.swiper-slide(v-for="(item, index) in items", :key="index" :class="{'image-cover': isGrid}")
-          picture
-            prismic-image(:field="item.image")
-      .swiper-button-prev(:id="`prev-${primary.gallery_id}`" v-if="!isGrid")
-      .swiper-button-next(:id="`next-${primary.gallery_id}`" v-if="!isGrid")
-      .swiper-pagination(:id="`pagination-${primary.gallery_id}`" v-if="!isGrid")
-      //- .swiper-scrollbar
+    .container
+      .gallery__title.content
+        prismic-rich-text(:field="primary.title")
+      .gallery__images.swiper-container(:id="primary.gallery_id")
+        .swiper-wrapper
+          figure.swiper-slide(v-for="(item, index) in items", :key="index" :class="{'image-cover': isGrid}")
+            picture
+              prismic-image(:field="item.image")
+        .swiper-button-prev(:id="`prev-${primary.gallery_id}`" v-if="!isGrid")
+        .swiper-button-next(:id="`next-${primary.gallery_id}`" v-if="!isGrid")
+        .swiper-pagination(:id="`pagination-${primary.gallery_id}`" v-if="!isGrid")
+        //- .swiper-scrollbar
 </template>
 
 <script lang="ts">
@@ -34,7 +35,7 @@ export default class ImageGalleryComponent extends Vue {
       loop: true,
       pagination: {
         el: '#pagination-' + this.primary.gallery_id,
-        type: 'fraction', // or bullets, progressbar
+        type: 'bullets', // or fraction, progressbar
         clickable: true
       },
       navigation: {

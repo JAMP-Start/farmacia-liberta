@@ -1,4 +1,4 @@
-import { RichText, Link } from 'prismic-dom'
+import { RichText } from 'prismic-dom'
 
 export default (type: any, element: any, content: any, children: any) => {
 

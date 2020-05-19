@@ -29,6 +29,9 @@ export default class SocialIconsComponent extends Vue {
   &.right {
     justify-content: flex-end;
   }
+  &.center {
+    justify-content: center;
+  }
   li {
     a {
       padding-left: .25rem;

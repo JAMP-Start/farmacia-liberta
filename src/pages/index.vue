@@ -11,9 +11,15 @@ import Prismic from 'prismic-javascript'
 
 import Slice from '~/components/sections/Slice.vue'
 
+import seo from '~/utils/seo.ts'
+
 @Component({
   components: {
     Slice
+  },
+  head() {
+    const { data, lang } = this.$data
+    return seo(data, lang, this.$route.path)
   }
 })
 export default class IndexPage extends Vue {

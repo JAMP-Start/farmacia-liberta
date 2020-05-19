@@ -1,21 +1,24 @@
 <template lang="pug">
-  .container-fluid
-    Slice(v-for="(slice, index) in data.body",
-      :data="slice",
-      :key="index")
+  div.page
+    PageHeader(:data="data")
+    .container-fluid
+      Slice(v-for="(slice, index) in data.body",
+        :data="slice",
+        :key="index")
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 
+import PageHeader from '~/components/common/PageHeader.vue'
 import Slice from '~/components/sections/Slice.vue'
 
 import seo from '~/utils/seo.ts'
 
 @Component({
   components: {
-    Slice
+    PageHeader, Slice
   },
   head() {
     const { data, lang } = this.$data

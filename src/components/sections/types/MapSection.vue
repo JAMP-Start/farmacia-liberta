@@ -1,6 +1,7 @@
 <template lang="pug">
-  div
-    div.map__wrapper(v-if="primary.map_iframe" v-html="$prismic.asText(primary.map_iframe)")
+  section.section
+    .container
+      div.map__wrapper(v-if="primary.map_iframe" v-html="$prismic.asText(primary.map_iframe)")
 </template>
 
 <script lang="ts">

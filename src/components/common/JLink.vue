@@ -49,7 +49,7 @@ export default class JLinkComponent extends Vue {
     if (this.linkToResolve) {
       return this.$prismic.linkResolver(this.linkToResolve)
     } else {
-      return data.slug ? '/' + data.slug : data.url || ''
+      return data.uid ? '/' + data.uid : data.url || ''
     }
   }
 }

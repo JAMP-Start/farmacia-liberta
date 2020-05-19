@@ -1,5 +1,6 @@
 <template lang="pug">
   footer.footer.has-background-light
+    TheFooterTop
     .footer__columns
       .columns.container
         .column(v-for="(column, index) in footerData.body", :key="index")
@@ -21,11 +22,12 @@ import { footerStore } from '../../store'
 
 import SocialIcons from './SocialIcons.vue'
 import NavigationMenu from './NavigationMenu.vue'
+import TheFooterTop from './TheFooterTop.vue'
 
 @Component({
   name: 'the-footer',
   components: {
-    NavigationMenu, SocialIcons
+    NavigationMenu, SocialIcons, TheFooterTop
   }
 })
 export default class TheFooterComponent extends Vue {
@@ -40,6 +42,7 @@ export default class TheFooterComponent extends Vue {
 <style lang="scss">
 .footer {
   padding: 0;
+  margin-top: 1rem;
   color: $primary;
   &__columns {
     padding: 3rem 1.5rem 1.5rem 1.5rem;

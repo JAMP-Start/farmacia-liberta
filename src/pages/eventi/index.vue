@@ -1,29 +1,33 @@
 <template lang="pug">
-  section.section
-    .container-fluid
-      .content
-        h1 Blog
-        .columns
-          .column.is-one-quarter(v-for="(post, index) in posts" :key="index")
-            PostCard(:post="post")
-        PostPagination(:pages="pages")
+  div.blog-page
+    PageHeader(:data="data")
+    section.section
+      .container
+        .content
+          .columns.is-multiline
+            .column.is-one-third(v-for="(post, index) in posts" :key="index")
+              PostCard(:post="post")
+          PostPagination(:pages="pages")
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
 
+import PageHeader from '~/components/common/PageHeader.vue'
 import PostCard from '~/components/blog/PostCard.vue'
 import PostPagination from '~/components/blog/PostPagination.vue'
 
+import seo from '~/utils/seo.ts'
+
 @Component({
   components: {
-    PostCard, PostPagination
+    PageHeader, PostCard, PostPagination
+  },
+  head() {
+    const { data, lang } = this.$data
+    return seo(data, lang, this.$route.path)
   }
-  // head() {
-  //   const { data, lang } = this.$data
-  //   return seo(data, lang, this.$route.path)
-  // }
 })
 export default class BlogPage extends Vue {
 
@@ -32,8 +36,9 @@ export default class BlogPage extends Vue {
 
   async asyncData({ app, query, error }): Promise<any> {
     try {
+      const { data, lang } = await app.$prismic.api.getSingle('blog')
       const { total_pages, results } = await app.$prismic.api.query(Prismic.Predicates.at('document.type', 'post'), { pageSize: 12, page: query.page || 1, orderings: '[my.post.date desc]' })
-      return { pages: total_pages, posts: results }
+      return { data, pages: total_pages, posts: results, lang }
     } catch (e) {
       console.error(e)
       error({ statusCode: 404, message: 'No Posts Found' })
