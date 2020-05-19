@@ -4,9 +4,13 @@
     background-size: cover;
     background-repeat: no-repeat;
   
-    &.is-dark h1 {
-      color: $white;
-      font-size: 3rem;
+    &.is-dark {
+         h1 {
+            color: $white;
+            font-size: 3rem;}
+        p {
+          color: $white;
+        }
     }
   
     &:before {

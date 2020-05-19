@@ -7,15 +7,15 @@
       .swiper-container#carousel(v-if="primary.display_as_carousel")
         .swiper-wrapper
           .swiper-slide(v-for="(item, index) in items" :key="index")
-            .box
+            JLink(:linkToResolve="item")
               article.media.media-centered
                 .media-image(v-if="item.data.image")
-                  figure.image
-                    prismic-image(:field="item.data.image")
-                .media-content.content
-                  prismic-rich-text(v-if="item.data.title" :field="item.data.title")
-                  prismic-rich-text(v-if="item.data.content" :field="item.data.content")
-                  JLink(:linkToResolve="item", linkClasses="button") {{ strings.discoverMore }}
+                  figure.image-cover
+                    picture
+                      prismic-image(:field="item.data.image")
+                .media-content.content.has-text-centered
+                  h4(v-if="item.data.title") {{ $prismic.asText(item.data.title) }}
+                  div(v-if="item.data.content") {{ $prismic.asText(item.data.content) | excerpt }}
         .swiper-button-prev#prev
         .swiper-button-next#next
         .swiper-pagination
@@ -105,3 +105,18 @@ export default class ContentTypeLoopComponent extends Vue {
 
 }
 </script>
+
+<style lang="scss" scoped>
+.media {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 10px 20px $primary-dark;
+  &-image figure {
+    padding-bottom: 100%;
+  }
+  &-content {
+    padding: 1rem;
+    color: $black!important;
+  }
+}
+</style>

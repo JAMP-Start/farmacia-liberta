@@ -2,13 +2,13 @@
   .footer__top.columns.mb-0
     .column.p-6.has-background-secondary.has-background-secondary-1
       JLink.has-text-primary(:linkUrl="{url:'tel:+39043440493'}" linkClasses="navbar-item" linkIcon="phone 2x") +39 0434 40493
-      p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmo
+      div Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmo
     .column.p-6.has-background-secondary.has-background-secondary-2
       JLink.has-text-primary(:linkUrl="{url:'https://wa.me/393496871399', target: '_blank'}" linkClasses="navbar-item" linkIcon="whatsapp 2x") +39 0434 40493
-      p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmo
+      div Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmo
     .column.p-6.has-background-secondary.has-background-secondary-3
       JLink.has-text-primary(:linkUrl="{url:'mailto:info@farmacialiberta.it'}" linkClasses="navbar-item" linkIcon="email 2x") info@farmacialiberta.it
-      p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmo
+      div Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmo
 </template>
 
 <script lang="ts">

@@ -47,6 +47,7 @@ export default class PostCardComponent extends Vue {
   }
   &__content {
     margin-bottom: 3rem;
+    color: $black!important;
   }
   &__excerpt {
     padding: .5rem 0 1rem 0;

@@ -1,9 +1,10 @@
 import PrismicDom from 'prismic-dom'
 import { isEmpty } from 'lodash'
 
+const siteName = 'Farmacia Libertà'
 const languages = {
-  it: 'Ita Description',
-  en: 'Eng Description'
+  it: 'Farmacia a Pordenone.',
+  en: 'Farmacy in Pordenone.'
 }
 const base = process.env.DOMAIN
 
@@ -14,15 +15,15 @@ export default (data: any, lang: string, route: string): any => {
     }
   }
 
-  const title = data.seo_title || PrismicDom.RichText.asText(data.title)
+  console.log(data)
+
+  const title = data.seo_title || PrismicDom.RichText.asText(data.title) + ' | ' + siteName
   const description = data.seo_description || (data.page_subtitle ? PrismicDom.RichText.asText(data.page_subtitle) : languages[lang])
 
   let image = `${base}/images/placeholder.png`
 
   if (!isEmpty(data.seo_image)) {
     image = data.seo_image.url
-  } else if (!isEmpty(data.hero_background)) {
-    image = data.hero_background.url
   } else if (!isEmpty(data.image)) {
     image = data.image.url
   }

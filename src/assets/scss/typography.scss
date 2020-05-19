@@ -58,16 +58,17 @@
 }
 
 a {
+    &:hover {
+        color: $secondary;
+        background: none;
+    } 
     &.arrow {
         font-weight: 600;
         &:after {
             content: '⟶';
             margin-left: .5rem;
         }
-    }
-    &:hover {
-    background: none;
-    }  
+    } 
 }
 .jicon {
     i {

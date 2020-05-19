@@ -1,6 +1,6 @@
 <template lang="pug">
   div.contacts-page
-    PageHeader(:data="data")
+    PageHeader(:data="data" :noOverlay="true")
     TheFooterTop
     .container-fluid
       Slice(v-for="(slice, index) in data.body",
@@ -15,9 +15,15 @@ import PageHeader from '~/components/common/PageHeader.vue'
 import TheFooterTop from '~/components/common/TheFooterTop.vue'
 import Slice from '~/components/sections/Slice.vue'
 
+import seo from '~/utils/seo.ts'
+
 @Component({
   components: {
     PageHeader, TheFooterTop, Slice
+  },
+  head() {
+    const { data, lang } = this.$data
+    return seo(data, lang, this.$route.path)
   }
 })
 export default class ContactsPage extends Vue {

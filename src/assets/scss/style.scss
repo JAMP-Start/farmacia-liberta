@@ -6,6 +6,10 @@ $font-primary: 'Poppins', sans-serif;
 body {
   text-rendering: optimizeLegibility;
   font-family: $font-primary;
+  color: $black;
+}
+p {
+  color: $black;
 }
 
 * {

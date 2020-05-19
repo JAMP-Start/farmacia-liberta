@@ -30,5 +30,8 @@ export default class NavigationMenuComponent extends Vue {
   font-weight: 600;
   padding-left: 0;
   padding-right: 0;
+  &:hover {
+    color: $secondary!important;
+  }
 }
 </style>

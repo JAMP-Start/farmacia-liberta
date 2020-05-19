@@ -1,5 +1,5 @@
 <template lang="pug">
-    section.hero.is-medium.is-dark.has-gradient.has-gradient-left-to-right(
+    section.hero.is-medium.is-dark(:class="{ 'has-gradient has-gradient-left-to-right' : !noOverlay }"
       v-if="data.show_header"
       :style="`background-image: url(${data.image.url})`",
       :title="data.image.alt")
@@ -21,6 +21,9 @@ export default class PageHeaderComponent extends Vue {
 
   @Prop()
   data!: any
+
+  @Prop()
+  noOverlay!: boolean
 
 }
 </script>
