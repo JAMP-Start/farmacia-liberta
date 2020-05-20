@@ -20,6 +20,7 @@ import Popup from './types/Popup.vue'
 import TableComponent from './types/TableComponent.vue'
 import HomeHours from './types/HomeHours.vue'
 import HomeAbout from './types/HomeAbout.vue'
+import Testimonial from './types/Testimonial.vue'
 
 import { Slice } from '~/types/Slice'
 
@@ -40,7 +41,8 @@ import { Slice } from '~/types/Slice'
     Popup,
     TableComponent,
     HomeHours,
-    HomeAbout
+    HomeAbout,
+    Testimonial
   }
 })
 export default class SliceComponent extends Vue {

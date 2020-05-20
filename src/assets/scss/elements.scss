@@ -43,6 +43,13 @@ figure.image-cover {
   position: relative;
   height: 100%;
   margin: 0;
+  &--full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
   picture {
     position: absolute;
     top: 0;
@@ -76,6 +83,18 @@ figure.image-cover {
         transform: scale(1.25);
         background-color: $primary;
       }
+    }
+  }
+  &-button {
+    &-prev:after {
+      content: '⟵';
+      color: $primary;
+      font-size: 2rem;
+    }
+    &-next:after {
+      content: '⟶';
+      color: $primary;
+      font-size: 2rem;
     }
   }
 }

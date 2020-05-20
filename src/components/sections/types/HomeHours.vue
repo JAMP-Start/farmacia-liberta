@@ -1,6 +1,6 @@
 <template lang="pug">
   .container
-    section.section.home-hours.has-gradient.has-gradient-left-to-right--blue
+    section.section.home-hours.has-gradient.has-gradient-left-to-right--blue.is-overlapped
       .content
         .columns
           div.column.is-half
@@ -47,10 +47,6 @@ export default class HomeHoursComponent extends Vue {
 
 <style lang="scss">
 .home-hours {
-  position: relative;
-  margin-top: -4rem;
-  z-index: 1;
-  box-shadow: 0px 10px 50px $primary-dark;
   ul {
     display: inline-flex;
     flex-flow: row wrap;
