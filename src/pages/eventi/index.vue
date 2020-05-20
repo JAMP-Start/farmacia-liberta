@@ -4,15 +4,20 @@
     section.section
       .container
         .content
-          .columns.is-multiline
-            .column.is-one-third(v-for="(post, index) in posts" :key="index")
-              PostCard(:post="post")
+          div(v-for="(month, index) in postsByMonth" :key="index")
+            template(v-if="month.posts.length")
+              h3.has-text-centered.is-capitalized.my-4 {{ month.title }}
+              .columns.is-multiline
+                .column.is-one-third(v-for="(post, index) in month.posts" :key="index")
+                  PostCard(:post="post")
           PostPagination(:pages="pages")
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import Prismic from 'prismic-javascript'
+
+import moment from 'moment'
 
 import PageHeader from '~/components/common/PageHeader.vue'
 import PostCard from '~/components/blog/PostCard.vue'
@@ -43,6 +48,17 @@ export default class BlogPage extends Vue {
       console.error(e)
       error({ statusCode: 404, message: 'No Posts Found' })
     }
+  }
+
+  get postsByMonth(): any {
+    const posts = this['posts']
+    const months:any = []
+    for (let i = 1; i <= 12; i++) {
+      const month:any = posts.filter(item => moment(item.data.date).month() === i)
+      const monthName = moment().month(i).locale('it-it').format('MMMM YYYY')
+      months.push({ title: monthName, posts: month })
+    }
+    return months.reverse()
   }
 
 }
