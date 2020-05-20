@@ -5,9 +5,10 @@
         prismic-rich-text(:field="primary.title")
       .gallery__images.swiper-container(:id="primary.gallery_id")
         .swiper-wrapper
-          figure.swiper-slide(v-for="(item, index) in items", :key="index" :class="{'image-cover': isGrid}")
-            picture
-              prismic-image(:field="item.image")
+          .swiper-slide(v-for="(item, index) in items", :key="index" :class="{'image-cover': isGrid}")
+            figure.image-cover
+              picture
+                prismic-image(:field="item.image")
         .swiper-button-prev(:id="`prev-${primary.gallery_id}`" v-if="!isGrid")
         .swiper-button-next(:id="`next-${primary.gallery_id}`" v-if="!isGrid")
         .swiper-pagination(:id="`pagination-${primary.gallery_id}`" v-if="!isGrid")
@@ -144,6 +145,11 @@ export default class ImageGalleryComponent extends Vue {
           max-height: 60vh;
         }
       }
+    }
+  }
+  &--slider {
+    figure {
+      padding-bottom: 50%;
     }
   }
   .swiper-lazy-preloader {

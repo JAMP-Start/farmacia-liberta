@@ -5,7 +5,7 @@
         div(v-for="(item, index) in items",
           :key="index",
           :class="`column is-${item.size_sm}-mobile is-${item.size_md}-tablet is-${item.size_lg}-desktop is-${item.size_xl}-widescreen`")
-          prismic-rich-text(:field="item.content")
+          prismic-rich-text.content(:field="item.content")
 </template>
 
 <script lang="ts">
