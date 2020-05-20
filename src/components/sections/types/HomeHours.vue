@@ -53,7 +53,7 @@ export default class HomeHoursComponent extends Vue {
     width: 90%;
     justify-content: space-between;
     li {
-      padding-left: 0;
+      padding-left: 0!important;
       &:before {
         display: none!important;
       }
