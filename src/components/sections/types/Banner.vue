@@ -45,3 +45,12 @@ export default class BannerComponent extends Vue {
 
 }
 </script>
+
+<style lang="scss" scoped>
+.title {
+  font-size: 4rem;
+}
+.subtitle {
+  font-weight: 300;
+}
+</style>
