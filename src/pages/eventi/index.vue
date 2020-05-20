@@ -53,13 +53,13 @@ export default class BlogPage extends Vue {
   get postsByMonth(): any {
     const posts = this['posts']
     const months:any = []
-      for (let i = 1; i <= 12; i++) {
-        const month:any = posts.filter(item => moment(item.data.date).month() === i)
-        if (month[0]) {
-          const monthName = moment(month[0].data.date).month(i).locale('it-it').format('MMMM YYYY')
-          months.push({ title: monthName, posts: month })
-        }
+    for (let i = 1; i <= 12; i++) {
+      const month:any = posts.filter(item => moment(item.data.date).month() === i)
+      if (month[0]) {
+        const monthName = moment(month[0].data.date).month(i).locale('it-it').format('MMMM YYYY')
+        months.push({ title: monthName, posts: month })
       }
+    }
     return months.reverse()
   }
 

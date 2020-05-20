@@ -55,7 +55,7 @@ export default class HomeHoursComponent extends Vue {
     li {
       padding-left: 0;
       &:before {
-        display: none;
+        display: none!important;
       }
       strong {
         display: block;
