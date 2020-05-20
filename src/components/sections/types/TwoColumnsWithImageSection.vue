@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.section(:class="[primary.section_classes, {'is-paddingless': primary.image_as_background}]")
+  section.section(:class="[primary.section_classes, {'is-paddinglesss': primary.image_as_background}]")
     .content(:class="primary.image_as_background ? 'container-fluid' : 'container'")
       .columns(v-for="(item, index) in items",
         :key="index",
