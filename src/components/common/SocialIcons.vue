@@ -26,6 +26,10 @@ export default class SocialIconsComponent extends Vue {
 <style lang="scss" scoped>
 .menu-list {
   align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 769px) {
+    justify-content: flex-start;
+  }
   &.right {
     justify-content: flex-end;
   }

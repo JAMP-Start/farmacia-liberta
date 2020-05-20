@@ -87,7 +87,8 @@ header {
 }
 
 .logo {
-  width: 100%;
+  width: auto;
+  min-width: 180px;
   min-height: 35px;
 }
 
