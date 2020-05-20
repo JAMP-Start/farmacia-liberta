@@ -1,5 +1,5 @@
 <template lang="pug">
-  .topbar
+  .topbar.is-hidden-touch
     .columns.container
       .topbar__left.column.is-8.has-text-centered.has-text-left-desktop.is
         JLink.has-text-primary(:linkUrl="{url:'tel:+39043440493'}" linkClasses="navbar-item" linkIcon="hours") Lun-Ven 8:30/13:00 - 15:00/19:30

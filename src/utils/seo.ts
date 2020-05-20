@@ -15,8 +15,6 @@ export default (data: any, lang: string, route: string): any => {
     }
   }
 
-  console.log(data)
-
   const title = data.seo_title || PrismicDom.RichText.asText(data.title) + ' | ' + siteName
   const description = data.seo_description || (data.page_subtitle ? PrismicDom.RichText.asText(data.page_subtitle) : languages[lang])
 

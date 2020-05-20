@@ -19,6 +19,7 @@ import MapSection from './types/MapSection.vue'
 import Popup from './types/Popup.vue'
 import TableComponent from './types/TableComponent.vue'
 import HomeHours from './types/HomeHours.vue'
+import HomeAbout from './types/HomeAbout.vue'
 
 import { Slice } from '~/types/Slice'
 
@@ -38,7 +39,8 @@ import { Slice } from '~/types/Slice'
     MapSection,
     Popup,
     TableComponent,
-    HomeHours
+    HomeHours,
+    HomeAbout
   }
 })
 export default class SliceComponent extends Vue {

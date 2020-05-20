@@ -14,8 +14,8 @@
             span(aria-hidden="true")
             span(aria-hidden="true")
             span(aria-hidden="true")
-        .navbar-end(:class="{ 'is-active': toggleMenu }")
-          .navbar-start
+        .navbar-menu(:class="{ 'is-active': toggleMenu }")
+          .navbar-end
             .navbar-item.is-hoverable(v-for="(item, index) in menu",
               :key="index",
               :class="{ 'has-dropdown': hasDropdown(item.items) }")
@@ -88,7 +88,7 @@ header {
 
 .logo {
   width: 100%;
-  min-height: 50px;
+  min-height: 35px;
 }
 
 .nav-item {
@@ -112,11 +112,14 @@ header {
   }
 }
 
-.navbar-brand {
-  margin: 2rem 0;
-}
-
 @media screen and (min-width: 1024px) {
+  .navbar-brand {
+    margin: 2rem 0;
+    .logo {
+      width: 100%;
+      min-height: 50px;
+    }
+  }
   .navbar-item .navbar-dropdown .navbar-item {
     &.navbar-link:not(.is-arrowless):after {
       transform: rotate(225deg);

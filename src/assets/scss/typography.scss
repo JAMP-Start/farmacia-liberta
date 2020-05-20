@@ -1,31 +1,6 @@
-.title {
-    &--special {
-        position: relative;
-        h2 {
-            position:relative;
-            color: $primary;
-            z-index: 1;
-            padding-bottom: 2.5rem;
-            font-size: 2.25rem;
-        &:after {
-            content: '';
-            width: 2rem;
-            height: 2px;
-            background-color: $secondary;
-            display: inline-block;
-            margin-left: 1rem;
-        }}
-        span {
-            position: absolute;
-            top: -2rem;
-            margin-left: 1.25rem;
-            font-size: 6.5rem;
-            color: $lighter;
-            font-weight: 700;
-            z-index: 0;
-            white-space: nowrap;
-        }
-    }
+// Base
+p {
+    color: $black;
 }
 
 .content {
@@ -57,6 +32,7 @@
     }
 }
 
+// Links
 a {
     &:hover {
         color: $secondary;
@@ -70,6 +46,8 @@ a {
         }
     } 
 }
+
+// Icons
 .jicon {
     i {
         background-size: contain;
@@ -117,6 +95,40 @@ a {
         }
         &.calendar {
             background-image: url('/svg/calendar.svg');
+        }
+    }
+}
+
+// Titles
+.title {
+    &--special {
+        position: relative;
+        max-widht: 100%;
+        overflow: hidden;
+        h2 {
+            position:relative;
+            color: $primary;
+            z-index: 1;
+            padding-bottom: 2.5rem;
+            font-size: 2.25rem;
+            &:after {
+                content: '';
+                width: 2rem;
+                height: 2px;
+                background-color: $secondary;
+                display: inline-block;
+                margin-left: 1rem;
+            }
+        }
+        span {
+            position: absolute;
+            top: -2rem;
+            margin-left: 1.25rem;
+            font-size: 6.5rem;
+            color: $lighter;
+            font-weight: 700;
+            z-index: 0;
+            white-space: nowrap;
         }
     }
 }

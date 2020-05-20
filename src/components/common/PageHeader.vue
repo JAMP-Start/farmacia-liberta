@@ -3,7 +3,6 @@
       v-if="data.show_header"
       :style="`background-image: url(${data.image.url})`",
       :title="data.image.alt")
-      .overlay
       .hero-body
         .container
           .content.has-text-centered

@@ -53,8 +53,11 @@ export default class TheFooterComponent extends Vue {
   }
   &__bottom {
     background-color: $white;
-    color: $grey;
+    padding: .75rem 0 1rem 0;
     margin-top: 1.5rem;
+    p, a {
+      color: $grey!important;
+    }
     .columns {
       align-items: center;
     }

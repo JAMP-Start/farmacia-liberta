@@ -1,3 +1,4 @@
+// Buttons
 .button {
   margin-top: 1.5rem;
   border-radius: 290486px;
@@ -8,6 +9,7 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: .9rem;
+  min-width: 160px;
   
   &.is-secondary {
     background-color: $secondary;
@@ -25,6 +27,7 @@
   }
 }
 
+// Box
 .media-centered {
     display: block;
     .media-icon .image {
@@ -35,6 +38,7 @@
 margin-bottom: 1rem;
 }
 
+// Images
 figure.image-cover {
   position: relative;
   height: 100%;
@@ -55,9 +59,12 @@ figure.image-cover {
   }
 }
 
+// Gallery
 .swiper {
   &-container {
     width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-bottom: 4rem;
   }
   &-pagination {
@@ -69,85 +76,6 @@ figure.image-cover {
         transform: scale(1.25);
         background-color: $primary;
       }
-    }
-  }
-}
-
-.m {
-  @for $i from 0 through 6 {
-    &-#{$i} {
-      margin: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &y-#{$i} {
-      margin-top: .5rem * $i!important;
-      margin-bottom: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &x-#{$i} {
-      margin-left: .5rem * $i!important;
-      margin-right: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &t-#{$i} {
-      margin-top: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &b-#{$i} {
-      margin-bottom: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &l-#{$i} {
-      margin-left: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &r-#{$i} {
-      margin-right: .5rem * $i!important;
-    }
-  }
-}
-.p {
-  @for $i from 0 through 6 {
-    &-#{$i} {
-      padding: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &y-#{$i} {
-      padding-top: .5rem * $i!important;
-      padding-bottom: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &x-#{$i} {
-      padding-left: .5rem * $i!important;
-      padding-right: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &t-#{$i} {
-      padding-top: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &b-#{$i} {
-      padding-bottom: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &l-#{$i} {
-      padding-left: .5rem * $i!important;
-    }
-  }
-  @for $i from 0 through 6 {
-    &r-#{$i} {
-      padding-right: .5rem * $i!important;
     }
   }
 }

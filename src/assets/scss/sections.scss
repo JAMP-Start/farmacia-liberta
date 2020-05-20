@@ -1,3 +1,4 @@
+// Hero
 .hero {
     position: relative;
     background-position: center;
@@ -5,12 +6,17 @@
     background-repeat: no-repeat;
   
     &.is-dark {
-         h1 {
+        h1, h2, h3, h4, h5, h6 {
             color: $white;
-            font-size: 3rem;}
-        p {
-          color: $white;
         }
+        p {
+          color: $primary-lighter;
+        }
+    }
+
+    .title--special h2:after {
+        background-color: $white;
+        display: inline-block;
     }
   
     &:before {
@@ -22,12 +28,14 @@
       background-color: rgba(0, 0, 0, 0.5);
       content: "";
     }
-  }
-
-.has-text-secondary {
-    color: $secondary;
+    @media screen and (min-width: 769px) {
+        &.is-medium .hero-body {
+            padding: 12rem 1.5rem;
+        }
+    }
 }
 
+// Background and Gradients
 .has-background, .has-gradient {
     &-dark, &-black, &-primary, &-left-to-right--blue {
         div, h1, h2, h3, h4, h5, h6, p, strong, a:not(.button) {
@@ -50,20 +58,15 @@
         }
     }
 }
-
 .has-gradient {
     position: relative;
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-    }
-    &.has-gradient-left-to-right .overlay {
+    &.has-gradient-left-to-right:before {
         background: transparent linear-gradient(90deg, $primary 0%, rgba($primary,0) 100%);
     }
     &.has-gradient-left-to-right--blue {
         background: transparent linear-gradient(90deg, $primary 0%, $primary-light 100%);
+    }
+    &.has-gradient-bottom-to-top:before {
+        background: transparent linear-gradient(0, $primary 0%, rgba($primary,0) 100%);
     }
 }

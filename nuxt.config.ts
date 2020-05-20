@@ -21,6 +21,9 @@ const config: Configuration = {
     '@fortawesome/fontawesome-free/css/all.min.css',
     '~/assets/scss/style.scss'
   ],
+  pageTransition: {
+    name: 'page'
+  },
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
@@ -54,6 +57,7 @@ const config: Configuration = {
   styleResources: {
     scss: [
       '~/assets/scss/variables.scss',
+      '~/assets/scss/helpers.scss',
       '~/assets/scss/sections.scss',
       '~/assets/scss/elements.scss',
       '~/assets/scss/typography.scss'
