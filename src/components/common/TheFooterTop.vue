@@ -1,5 +1,5 @@
 <template lang="pug">
-  .footer__top.columns.mb-0.container-fluid
+  .footer__top.columns.mb-0.container-fluid.mx-0
     .column.p-6.has-background-secondary.has-background-secondary-1
       JLink.has-text-primary(:linkUrl="{url:'tel:+39043440493'}" linkClasses="navbar-item" linkIcon="phone 2x") +39 0434 40493
       div Siamo sempre a tua disposizione per <strong>consigli e indicazioni terapeutiche</strong>.
