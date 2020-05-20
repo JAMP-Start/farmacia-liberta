@@ -1,5 +1,9 @@
 .section {
     position: relative;
+    margin: 1.5rem auto;
+    @media screen and (min-width: 769px) {
+        margin: 3rem auto;
+    }
 }
 // Hero
 .hero {
