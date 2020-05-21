@@ -52,7 +52,7 @@ export default class BlogPage extends Vue {
 
   monthlyPosts: any = []
 
-  mounted(){
+  mounted() {
     this.monthlyPosts = this.postsByMonth()
   }
 

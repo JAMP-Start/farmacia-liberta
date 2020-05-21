@@ -74,7 +74,7 @@ export default class ImageGalleryComponent extends Vue {
         freeMode: true,
         pagination: {
           el: '#pagination-' + this.primary.gallery_id,
-          type: 'progressbar',
+          type: 'bullets',
           clickable: true
         },
         navigation: {
@@ -132,21 +132,21 @@ export default class ImageGalleryComponent extends Vue {
   &__images {
     max-height: 90vh;
   }
-  &--carousel {
-    .gallery__images {
-      max-height: 60vh;
+  // &--carousel {
+  //   .gallery__images {
+  //     max-height: 60vh;
 
-      .swiper-slide {
-        max-width: 100%;
-        width: auto;
+  //     .swiper-slide {
+  //       max-width: 100%;
+  //       width: auto;
 
-        img {
-          position: relative;
-          max-height: 60vh;
-        }
-      }
-    }
-  }
+  //       img {
+  //         position: relative;
+  //         max-height: 60vh;
+  //       }
+  //     }
+  //   }
+  // }
   &--slider {
     figure {
       padding-bottom: 50%;
@@ -164,6 +164,15 @@ export default class ImageGalleryComponent extends Vue {
         min-height: 300px;
       }
     }
+  }
+}
+#brands {
+  figure img {
+    object-fit: contain;
+  }
+  .swiper-slide {
+    width: 20%;
+    height: 60px;
   }
 }
 </style>

@@ -11,7 +11,7 @@
                 figure.image
                   prismic-image(:field="item.image")
               .media-icon(v-if="item.icon.url")
-                figure.image.is-128x128
+                figure.image.is-64x64.mb-2
                   prismic-image(:field="item.icon")
               .media-content.content
                 prismic-rich-text(:field="item.title")

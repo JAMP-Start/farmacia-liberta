@@ -81,6 +81,9 @@ $gap-size: 1.5rem;
     &.has-gradient-bottom-to-top:before {
         background: transparent linear-gradient(0, $primary 0%, rgba($primary,0) 100%);
     }
+    &.has-gradient-light-to-white {
+        background: transparent linear-gradient(0, $white 55%, $light 45%);
+    }
 }
 
 .is-overlapped {
@@ -105,4 +108,3 @@ $gap-size: 1.5rem;
         }
     }
 }
-
