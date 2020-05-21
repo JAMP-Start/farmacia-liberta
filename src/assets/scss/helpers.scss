@@ -1,77 +1,77 @@
 // Spacing
 .m {
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &-#{$i} {
       margin: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &y-#{$i} {
       margin-top: .5rem * $i!important;
       margin-bottom: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &x-#{$i} {
       margin-left: .5rem * $i!important;
       margin-right: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &t-#{$i} {
       margin-top: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &b-#{$i} {
       margin-bottom: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &l-#{$i} {
       margin-left: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &r-#{$i} {
       margin-right: .5rem * $i!important;
     }
   }
 }
 .p {
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &-#{$i} {
       padding: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &y-#{$i} {
       padding-top: .5rem * $i!important;
       padding-bottom: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &x-#{$i} {
       padding-left: .5rem * $i!important;
       padding-right: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &t-#{$i} {
       padding-top: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &b-#{$i} {
       padding-bottom: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &l-#{$i} {
       padding-left: .5rem * $i!important;
     }
   }
-  @for $i from 0 through 6 {
+  @for $i from 0 through 10 {
     &r-#{$i} {
       padding-right: .5rem * $i!important;
     }
