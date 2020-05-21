@@ -56,6 +56,7 @@ export default class ImageGalleryComponent extends Vue {
     if (this.galleryType === 'carousel') {
       swiperOptions = {
         slidesPerView: 'auto',
+        slidesToScroll: 'auto',
         direction: 'horizontal',
         spaceBetween: 20,
         mousewheel: {
@@ -132,21 +133,21 @@ export default class ImageGalleryComponent extends Vue {
   &__images {
     max-height: 90vh;
   }
-  // &--carousel {
-  //   .gallery__images {
-  //     max-height: 60vh;
+  &--carousel {
+    .gallery__images {
+      max-height: 60vh;
 
-  //     .swiper-slide {
-  //       max-width: 100%;
-  //       width: auto;
+      .swiper-slide {
+        max-width: 100%;
+        width: auto;
 
-  //       img {
-  //         position: relative;
-  //         max-height: 60vh;
-  //       }
-  //     }
-  //   }
-  // }
+        img {
+          position: relative;
+          max-height: 60vh;
+        }
+      }
+    }
+  }
   &--slider {
     figure {
       padding-bottom: 50%;
@@ -172,7 +173,11 @@ export default class ImageGalleryComponent extends Vue {
   }
   .swiper-slide {
     width: 20%;
-    height: 60px;
+    height: 120px;
+    @media screen and (max-width: 768px) {
+      width: 50%;
+      height: 120px;
+    }
   }
 }
 </style>
