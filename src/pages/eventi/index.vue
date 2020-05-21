@@ -4,7 +4,7 @@
     section.section
       .container
         .content
-          div(v-for="(month, index) in postsByMonth" :key="index")
+          div(v-for="(month, index) in monthlyPosts" :key="index")
             template(v-if="month.posts.length")
               h3.has-text-centered.is-capitalized.mb-4 {{ month.title }}
               .columns.is-multiline
@@ -50,7 +50,13 @@ export default class BlogPage extends Vue {
     }
   }
 
-  get postsByMonth(): any {
+  monthlyPosts: any = []
+
+  mounted(){
+    this.monthlyPosts = this.postsByMonth()
+  }
+
+  postsByMonth(): any {
     const posts = this['posts']
     const months:any = []
     for (let y = 2018; y <= 2030; y++) {
