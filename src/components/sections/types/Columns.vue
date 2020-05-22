@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.section(:class="primary.section_classes")
+  section.section(:id="primary.section_id" :class="primary.section_classes")
     .container
       .columns
         div(v-for="(item, index) in items",

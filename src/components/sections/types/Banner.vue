@@ -48,7 +48,10 @@ export default class BannerComponent extends Vue {
 
 <style lang="scss" scoped>
 .title {
-  font-size: 4rem;
+  font-size: 3rem;
+  @media screen and (min-width: 769px) {
+    font-size: 4rem;
+  }
 }
 .subtitle {
   font-weight: 300;

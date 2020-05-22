@@ -1,4 +1,9 @@
 // Buttons
+.buttons .button {
+  @media screen and (max-width: 560px) {
+    flex: 1;
+  }
+}
 .button {
   margin-top: 1.5rem;
   border-radius: 290486px;
@@ -15,6 +20,10 @@
     background-color: $secondary;
     color: $white;
     border-color: $secondary;
+    &:hover {
+      background-color: $primary;
+      border-color: $primary;
+    }
     &.is-outlined {
       background-color: transparent;
       border-color: $secondary;

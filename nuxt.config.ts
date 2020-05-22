@@ -59,6 +59,7 @@ const config: Configuration = {
       '~/assets/scss/variables.scss',
       '~/assets/scss/helpers.scss',
       '~/assets/scss/sections.scss',
+      '~/assets/scss/single-sections.scss',
       '~/assets/scss/elements.scss',
       '~/assets/scss/typography.scss'
     ]
