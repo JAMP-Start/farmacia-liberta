@@ -63,6 +63,15 @@ export default class JLinkComponent extends Vue {
       align-items: center;
       justify-content: center;
       font-weight: 400!important;
+       @media screen and (max-width: 440px) {
+         flex-flow: column wrap;
+         width: 100%;
+         text-align: center;
+         .icon {
+           margin-right: 0;
+           margin-bottom: 1rem;
+         }
+       }
       .icon {
         margin-right: .5rem;
       }
