@@ -49,6 +49,10 @@ margin-bottom: 1rem;
 
 // Images
 figure {
+  img {
+    z-index: 1;
+    position: relative;
+  }
   &.image {
     img {
       max-width: 100%;
