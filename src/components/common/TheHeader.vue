@@ -52,9 +52,9 @@ export default class TheHeaderComponent extends Vue {
   toggleMenu: boolean = false
   menu: any[] = []
 
-  // get headerData(): any {
-  //   return headerStore.data
-  // }
+  get headerData(): any {
+    return headerStore.data
+  }
 
   mounted(): void {
     let parentIndex = -1
