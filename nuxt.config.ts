@@ -1,6 +1,6 @@
 import { Configuration } from '@nuxt/types'
 import dotenv from 'dotenv'
-
+import routes from './src/prismic/routes'
 dotenv.config()
 
 const config: Configuration = {
@@ -65,7 +65,8 @@ const config: Configuration = {
     ]
   },
   generate: {
-    fallback: true
+    fallback: true,
+    routes
   },
   // build: {
   //   extend(config, ctx) {

@@ -1,9 +1,8 @@
 import { RichText } from 'prismic-dom'
 
-export default (type: any, element: any, content: any, children: any) => {
+export default (type: any, element: any, content: any) => {
 
   if (type === RichText.Elements.preformatted) {
-    console.log(children)
     return `${element.text}`
   }
   // if (type === RichText.Elements.heading2) {
