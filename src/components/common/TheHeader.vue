@@ -16,7 +16,7 @@
             span(aria-hidden="true")
         .navbar-menu(:class="{ 'is-active': toggleMenu }")
           .navbar-end
-            .navbar-item.is-hoverable(v-for="(item, index) in menu",
+            .navbar-item.is-hoverable(v-for="(item, index) in navigation",
               :key="index",
               :class="{ 'has-dropdown': hasDropdown(item.items) }")
               JLink(:linkUrl="item.primary.nav_link",
@@ -56,9 +56,9 @@ export default class TheHeaderComponent extends Vue {
     return headerStore.data
   }
 
-  mounted(): void {
+  get navigation(): any {
     let parentIndex = -1
-    headerStore.data.body.forEach((item: any, index: number) => {
+    this.headerData.body.forEach((item: any, index: number) => {
       if (item.slice_type === '1st_level') {
         this.menu.push({ ...item, items: [] })
         parentIndex = index
@@ -66,6 +66,7 @@ export default class TheHeaderComponent extends Vue {
         this.menu[parentIndex].items.push(item)
       }
     })
+    return this.menu
   }
 
   hasDropdown(items = []): boolean {
