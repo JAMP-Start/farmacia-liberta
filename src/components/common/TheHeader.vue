@@ -52,13 +52,13 @@ export default class TheHeaderComponent extends Vue {
   toggleMenu: boolean = false
   menu: any[] = []
 
-  get headerData(): any {
-    return headerStore.data
-  }
+  // get headerData(): any {
+  //   return headerStore.data
+  // }
 
   mounted(): void {
     let parentIndex = -1
-    this.headerData.body.forEach((item: any, index: number) => {
+    headerStore.data.body.forEach((item: any, index: number) => {
       if (item.slice_type === '1st_level') {
         this.menu.push({ ...item, items: [] })
         parentIndex = index
