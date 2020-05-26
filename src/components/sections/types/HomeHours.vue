@@ -62,5 +62,14 @@ export default class HomeHoursComponent extends Vue {
       }
     }
   }
+  a {
+    @extend .button;
+    padding: .75rem 1.5rem;
+    border: 1px solid $white;
+    &:hover {
+      background-color: $white;
+      color: $primary!important;
+    }
+  }
 }
 </style>

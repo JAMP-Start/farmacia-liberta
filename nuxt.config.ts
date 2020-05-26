@@ -33,8 +33,7 @@ const config: Configuration = {
   plugins: [
     '~/plugins/prismic-accessor.ts',
     '~/plugins/components.js',
-    '~/plugins/filters.js',
-    '~/plugins/ga.client.js'
+    '~/plugins/filters.js'
   ],
   modules: [
     '@nuxtjs/prismic',

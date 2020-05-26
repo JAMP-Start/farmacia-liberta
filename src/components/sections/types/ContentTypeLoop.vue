@@ -16,6 +16,7 @@
                 .media-content.content.has-text-centered
                   h4(v-if="item.data.title") {{ $prismic.asText(item.data.title) }}
                   div(v-if="item.data.content") {{ $prismic.asText(item.data.content) | excerpt }}
+                  div.date(v-if="item.data.date") {{ item.data.date | date }}
         .swiper-button-prev#prev
         .swiper-button-next#next
         .swiper-pagination
@@ -117,6 +118,11 @@ export default class ContentTypeLoopComponent extends Vue {
   &-content {
     padding: 1rem;
     color: $black!important;
+    .date {
+      margin-top: .5rem;
+      color: $secondary;
+      font-weight: 600;
+    }
   }
 }
 </style>

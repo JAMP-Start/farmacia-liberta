@@ -102,7 +102,7 @@ figure {
       margin: 0 5px!important;
       &-active {
         transform: scale(1.25);
-        background-color: $primary;
+        background-color: $primary!important;
       }
     }
   }

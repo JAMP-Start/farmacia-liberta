@@ -4,7 +4,7 @@
       JLink.has-text-primary(:linkUrl="{url:'tel:+39043440493'}" linkClasses="navbar-item" linkIcon="phone is-medium") +39 0434 40493
       div Siamo sempre a tua disposizione per <strong>consigli e indicazioni terapeutiche</strong>.
     .column.has-background-secondary.has-background-secondary-2
-      JLink.has-text-primary(:linkUrl="{url:'https://wa.me/393496871399', target: '_blank'}" linkClasses="navbar-item" linkIcon="whatsapp is-medium") +39 0434 40493
+      JLink.has-text-primary(:linkUrl="{url:'https://wa.me/393518056456', target: '_blank'}" linkClasses="navbar-item" linkIcon="whatsapp is-medium") +39 351 8056456
       div <strong>Prenota il prodotto</strong> che desideri. Scrivici un messaggio su <strong>Whatsapp</strong>!
     .column.has-background-secondary.has-background-secondary-3
       JLink.has-text-primary(:linkUrl="{url:'mailto:farmacialibertapn@gmail.com'}" linkClasses="navbar-item" linkIcon="email is-medium") farmacialibertapn@gmail.com

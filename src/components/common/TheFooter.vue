@@ -3,7 +3,7 @@
     TheFooterTop
     .footer__columns
       .columns.container
-        .column(v-for="(column, index) in footerData.body", :key="index")
+        .column(v-for="(column, index) in footerData.body", :key="index" :class="{'is-offset-1': index === 1}")
           .footer__content(v-if="column.slice_type === 'content_section'")
             prismic-rich-text(:field="column.primary.content")
           .footer__content(v-if="column.slice_type === 'navigation'")
