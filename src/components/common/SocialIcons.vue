@@ -14,12 +14,14 @@ import { socialStore } from '~/store'
   name: 'social-icons'
 })
 export default class SocialIconsComponent extends Vue {
+
   get socialList(): any {
     return socialStore.data
   }
 
   @Prop()
   alignment!: string
+
 }
 </script>
 
@@ -27,21 +29,26 @@ export default class SocialIconsComponent extends Vue {
 .menu-list {
   align-items: center;
   justify-content: center;
+
   @media screen and (min-width: 769px) {
     justify-content: flex-start;
   }
+
   &.right {
     justify-content: flex-end;
   }
+
   &.center {
     justify-content: center;
   }
+
   li {
     a {
-      padding-left: .25rem;
-      padding-right: .25rem;
+      padding-right: 0.25rem;
+      padding-left: 0.25rem;
+
       .icon {
-        margin-right: 0!important;
+        margin-right: 0 !important;
       }
     }
   }

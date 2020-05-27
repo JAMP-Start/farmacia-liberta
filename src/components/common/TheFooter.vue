@@ -41,23 +41,29 @@ export default class TheFooterComponent extends Vue {
 
 <style lang="scss">
 .footer {
-  padding: 0;
   margin-top: 1rem;
+  padding: 0;
   color: $primary;
+
   &__columns {
     padding: 3rem 1.5rem 1.5rem 1.5rem;
+
     img {
       max-width: 245px;
       max-height: 45px;
     }
   }
+
   &__bottom {
-    background-color: $white;
-    padding: .75rem 0 1rem 0;
     margin-top: 1.5rem;
-    p, a {
-      color: $grey!important;
+    padding: 0.75rem 0 1rem 0;
+    background-color: $white;
+
+    p,
+    a {
+      color: $grey !important;
     }
+
     .columns {
       align-items: center;
     }

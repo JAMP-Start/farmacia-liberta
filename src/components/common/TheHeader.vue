@@ -50,22 +50,26 @@ import { headerStore } from '~/store'
 export default class TheHeaderComponent extends Vue {
 
   toggleMenu: boolean = false
-  menu: any[] = []
 
   get headerData(): any {
     return headerStore.data
   }
 
-  mounted(): void {
+  get menu(): any[] {
+    const menu: any[] = []
+
     let parentIndex = -1
-    this.headerData.body.forEach((item: any, index: number) => {
+
+    headerStore.data.body.forEach((item: any, index: number) => {
       if (item.slice_type === '1st_level') {
-        this.menu.push({ ...item, items: [] })
+        menu.push({ ...item, items: [] })
         parentIndex = index
       } else {
-        this.menu[parentIndex].items.push(item)
+        menu[parentIndex].items.push(item)
       }
     })
+
+    return menu
   }
 
   hasDropdown(items = []): boolean {
@@ -78,7 +82,7 @@ export default class TheHeaderComponent extends Vue {
 <style lang="scss">
 header {
   background-color: $white;
-  box-shadow: 0px 3px 16px rgba($primary-lighter, .2);
+  box-shadow: 0px 3px 16px rgba($primary-lighter, 0.2);
 }
 .is-sticky {
   position: sticky;
@@ -87,28 +91,30 @@ header {
 }
 
 .logo {
-  width: auto;
   min-width: 180px;
   min-height: 35px;
+  width: auto;
 }
 
 .nav-item {
-  font-weight: 600;
   padding: 1rem 2rem;
+  font-weight: 600;
+
   :after {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    content: '';
+    display: block;
+    margin-top: 0.5rem;
     width: 42px;
     height: 3px;
     background-color: transparent;
-    display: block;
-    margin-top: .5rem;
+    content: "";
+    transform: translateX(-50%);
   }
+
   &.nuxt-link-exact-active {
     :after {
-      background-color: $secondary!important;
+      background-color: $secondary !important;
     }
   }
 }
@@ -116,9 +122,10 @@ header {
 @media screen and (min-width: 1024px) {
   .navbar-brand {
     margin: 2rem 0;
+
     .logo {
-      width: 100%;
       min-height: 50px;
+      width: 100%;
     }
   }
   .navbar-item .navbar-dropdown .navbar-item {
@@ -139,10 +146,11 @@ header {
       left: 100%;
     }
   }
+
   .navbar-end {
     .buttons {
       .button {
-        margin-top: 0!important;
+        margin-top: 0 !important;
       }
     }
   }

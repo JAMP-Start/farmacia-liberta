@@ -1,23 +1,14 @@
-import { Store, ActionTree } from 'vuex'
-import {
-  initialiseStores,
-  stringsStore,
-  headerStore,
-  footerStore,
-  socialStore
-} from '~/utils/store-accessor'
+import { ActionTree } from 'vuex'
 
-const initializer = (store: Store<any>) => initialiseStores(store)
+export const state = (): any => ({})
 
-export const plugins = [initializer]
-export const state = () => ({})
 export const actions: ActionTree<any, any> = {
-  async nuxtServerInit(): Promise<any> {
+  async nuxtServerInit({ dispatch }): Promise<any> {
     const lang = 'it-it'
-    await stringsStore.setStrings(lang)
-    await headerStore.getData(lang)
-    await footerStore.getData(lang)
-    await socialStore.getData(lang)
+
+    await dispatch('strings/getStrings', lang)
+    await dispatch('navigation/getData', lang)
+    await dispatch('header/getData', lang)
+    await dispatch('social/getData', lang)
   }
 }
-export * from '~/utils/store-accessor'

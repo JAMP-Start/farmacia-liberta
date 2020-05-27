@@ -1,25 +1,32 @@
-import { Module, VuexModule, MutationAction } from 'vuex-module-decorators'
-import { $prismic } from '~/utils/prismic'
+import { MUTATION_TYPE } from '~/constants/index'
+import { MutationTree, ActionTree, GetterTree } from 'vuex'
 
-@Module({
-  name: 'header',
-  namespaced: true,
-  stateFactory: true
+export const state = (): any => ({
+  data: null
 })
-export default class HeaderModule extends VuexModule {
 
-  data: any = null
+export const mutations: MutationTree<any> = {
+  [MUTATION_TYPE.SET_NAVIGATION_DATA](state: any, data: any) {
+    state.data = data
+  }
+}
 
-  @MutationAction({ mutate: ['data'] })
-  async getData(lang: string): Promise<any> {
-    const header = await $prismic.api.getByUID('header', 'header', { lang })
+export const actions: ActionTree<any, any> = {
+  async getNavigationData({ commit }, lang): Promise<any> {
+    const header = await this.$prismic.api.getByUID('header', 'header', { lang })
     const navigation = await $prismic.api.getByUID('menu', header.data.navigation.uid, { lang })
     const data = {
       ...header.data,
       ...navigation.data
     }
 
-    return { data }
+    const { data } = await this['$prismicApi'].getSingle('navigation', { lang })
+    commit(MUTATION_TYPE.SET_NAVIGATION_DATA, data)
   }
+}
 
+export const getters: GetterTree<any, any> = {
+  data(state: any) {
+    return state.data
+  }
 }

@@ -27,12 +27,15 @@ export default class NavigationMenuComponent extends Vue {
 
 <style lang="scss" scoped>
 .menu .menu-list a {
-  font-weight: 600;
-  padding-left: 0;
-  padding-right: 0;
   padding: 0.5em 0;
-  &:hover, &:focus, &:active {
-    color: $secondary!important;
+  padding-right: 0;
+  padding-left: 0;
+  font-weight: 600;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $secondary !important;
   }
 }
 </style>

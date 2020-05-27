@@ -24,10 +24,11 @@ export default class TheTopbarComponent extends Vue {
 
 <style lang="scss">
 .topbar {
-  background-color: $white;
-  z-index: 99;
   position: relative;
+  z-index: 99;
+  background-color: $white;
   box-shadow: 0px 3px 16px $primary-lighter;
+
   .columns {
     margin-bottom: 0;
   }

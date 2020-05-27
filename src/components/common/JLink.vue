@@ -56,25 +56,28 @@ export default class JLinkComponent extends Vue {
 </script>
 
 <style lang="scss" scoped>
-  .navbar-item {
-    &.has-icon {
-      display: inline-flex;
-      flex-flow: row wrap;
-      align-items: center;
-      justify-content: center;
-      font-weight: 400!important;
-       @media screen and (max-width: 440px) {
-         flex-flow: column wrap;
-         width: 100%;
-         text-align: center;
-         .icon {
-           margin-right: 0;
-           margin-bottom: 1rem;
-         }
-       }
+.navbar-item {
+  &.has-icon {
+    display: inline-flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-weight: 400 !important;
+
+    @media screen and (max-width: 440px) {
+      flex-flow: column wrap;
+      width: 100%;
+      text-align: center;
+
       .icon {
-        margin-right: .5rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
       }
     }
+
+    .icon {
+      margin-right: 0.5rem;
+    }
   }
+}
 </style>
