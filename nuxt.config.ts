@@ -1,6 +1,7 @@
 import { Configuration } from '@nuxt/types'
 import dotenv from 'dotenv'
 import routes from './src/prismic/routes'
+
 dotenv.config()
 
 const config: Configuration = {
@@ -31,7 +32,6 @@ const config: Configuration = {
     '@nuxtjs/dotenv'
   ],
   plugins: [
-    '~/plugins/prismic-accessor.ts',
     '~/plugins/components.js',
     '~/plugins/filters.js'
   ],
@@ -72,9 +72,6 @@ const config: Configuration = {
   //   extend(config, ctx) {
   //   }
   // },
-  transpileDependencies: [
-    'vuex-module-decorators'
-  ],
   srcDir: 'src',
   typescript: {
     typeCheck: {

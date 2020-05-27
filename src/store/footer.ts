@@ -1,22 +1,23 @@
-import { Module, VuexModule, MutationAction } from 'vuex-module-decorators'
-import { $prismic } from '~/utils/prismic'
+import { MutationTree, ActionTree, GetterTree } from 'vuex'
+import { MUTATION_TYPE } from '~/constants/index'
 
-@Module({
-  name: 'footer',
-  namespaced: true,
-  stateFactory: true
+export const state = (): any => ({
+  data: {}
 })
-export default class FooterModule extends VuexModule {
 
-  data: any = null
+export const mutations: MutationTree<any> = {
+  [MUTATION_TYPE.SET_FOOTER_DATA](state: any, data: any) {
+    state.data = data
+  }
+}
 
-  @MutationAction({ mutate: ['data'] })
-  async getData(lang: string): Promise<any> {
-    const footer = await $prismic.api.getByUID('footer', 'footer', { lang })
+export const actions: ActionTree<any, any> = {
+  async getData({ commit }, lang: string): Promise<any> {
+    const footer = await this.app.$prismic.api.getByUID('footer', 'footer', { lang })
     const footerPromises = footer.data.body.map(async (slice: any, index: number) => {
       if (slice.slice_type === 'navigation') {
         const slicePromises = slice.items.map(async (nav: any) => {
-          const navigation = await $prismic.api.getByUID('menu', nav.menu.uid, { lang })
+          const navigation = await this.app.$prismic.api.getByUID('menu', nav.menu.uid, { lang })
           footer.data.body[index].primary = { ...navigation.data, id: nav.menu.uid }
         })
 
@@ -26,7 +27,12 @@ export default class FooterModule extends VuexModule {
 
     await Promise.all(footerPromises)
 
-    return { data: footer.data }
+    commit(MUTATION_TYPE.SET_FOOTER_DATA, footer.data)
   }
+}
 
+export const getters: GetterTree<any, any> = {
+  data(state: any) {
+    return state.data
+  }
 }

@@ -12,16 +12,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import { footerStore } from '../../store'
+import { Component, Vue, namespace } from 'nuxt-property-decorator'
+
+const footerModule = namespace('footer')
 
 @Component({
   name: 'the-footer-top'
 })
 export default class TheFooterTopComponent extends Vue {
-  get footerData(): any {
-    return footerStore.data
-  }
+
+  @footerModule.Getter('data')
+  readonly footerData: any
+
 }
 </script>
 
@@ -29,15 +31,18 @@ export default class TheFooterTopComponent extends Vue {
 .footer__top {
   .column {
     padding: 1.5rem;
+
     @media screen and (min-width: 769px) {
       padding: 3rem;
     }
-     @media screen and (max-width: 440px) {
-       text-align: center;
-     }
+
+    @media screen and (max-width: 440px) {
+      text-align: center;
+    }
   }
+
   a.navbar-item.has-icon {
-    font-weight: 600!important;
+    font-weight: 600 !important;
   }
 }
 </style>

@@ -17,12 +17,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import { footerStore } from '../../store'
+import { Component, Vue, namespace } from 'nuxt-property-decorator'
 
 import SocialIcons from './SocialIcons.vue'
 import NavigationMenu from './NavigationMenu.vue'
 import TheFooterTop from './TheFooterTop.vue'
+
+const footerModule = namespace('footer')
 
 @Component({
   name: 'the-footer',
@@ -32,9 +33,8 @@ import TheFooterTop from './TheFooterTop.vue'
 })
 export default class TheFooterComponent extends Vue {
 
-  get footerData(): any {
-    return footerStore.data
-  }
+  @footerModule.Getter('data')
+  readonly footerData: any
 
 }
 </script>

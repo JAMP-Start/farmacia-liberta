@@ -37,9 +37,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, namespace } from 'nuxt-property-decorator'
 import SocialIcons from './SocialIcons.vue'
-import { headerStore } from '~/store'
+
+const headerModule = namespace('header')
 
 @Component({
   name: 'the-header',
@@ -51,16 +52,15 @@ export default class TheHeaderComponent extends Vue {
 
   toggleMenu: boolean = false
 
-  get headerData(): any {
-    return headerStore.data
-  }
+  @headerModule.Getter('data')
+  readonly headerData: any
 
   get menu(): any[] {
     const menu: any[] = []
 
     let parentIndex = -1
 
-    headerStore.data.body.forEach((item: any, index: number) => {
+    this.headerData.body.forEach((item: any, index: number) => {
       if (item.slice_type === '1st_level') {
         menu.push({ ...item, items: [] })
         parentIndex = index
@@ -84,6 +84,7 @@ header {
   background-color: $white;
   box-shadow: 0px 3px 16px rgba($primary-lighter, 0.2);
 }
+
 .is-sticky {
   position: sticky;
   top: 0;

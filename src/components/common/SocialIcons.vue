@@ -6,18 +6,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { Component, Vue, Prop, namespace } from 'nuxt-property-decorator'
 
-import { socialStore } from '~/store'
+const socialModule = namespace('social')
 
 @Component({
   name: 'social-icons'
 })
 export default class SocialIconsComponent extends Vue {
 
-  get socialList(): any {
-    return socialStore.data
-  }
+  @socialModule.Getter('data')
+  readonly socialList: any
 
   @Prop()
   alignment!: string

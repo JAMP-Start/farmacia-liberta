@@ -36,14 +36,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { Component, Vue, Prop, namespace } from 'nuxt-property-decorator'
 
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
 
 import { Slice } from '~/types/Slice'
 
-import { stringsStore } from '~/store'
+const stringsModule = namespace('strings')
 
 @Component({
   name: 'content-type-loop'
@@ -100,9 +100,8 @@ export default class ContentTypeLoopComponent extends Vue {
     return this.data.items
   }
 
-  get strings(): any {
-    return stringsStore.strings
-  }
+  @stringsModule.Getter('data')
+  readonly strings: any
 
 }
 </script>
