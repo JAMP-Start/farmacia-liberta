@@ -1,23 +1,28 @@
 <template lang="pug">
   .footer__top.columns.mb-0.container-fluid.mx-0
     .column.has-background-secondary.has-background-secondary-1
-      JLink.has-text-primary(:linkUrl="{url:'tel:+39043440493'}" linkClasses="navbar-item" linkIcon="phone is-medium") +39 0434 40493
-      div Siamo sempre a tua disposizione per <strong>consigli e indicazioni terapeutiche</strong>.
+      JLink.has-text-primary(:linkUrl="footerData.footer_top_1_link" linkClasses="navbar-item" linkIcon="phone is-medium") {{ footerData.footer_top_1_label }}
+      prismic-rich-text(:field="footerData.footer_top_1_content")
     .column.has-background-secondary.has-background-secondary-2
-      JLink.has-text-primary(:linkUrl="{url:'https://wa.me/393518056456', target: '_blank'}" linkClasses="navbar-item" linkIcon="whatsapp is-medium") +39 351 8056456
-      div <strong>Prenota il prodotto</strong> che desideri. Scrivici un messaggio su <strong>Whatsapp</strong>!
+      JLink.has-text-primary(:linkUrl="footerData.footer_top_2_link" linkClasses="navbar-item" linkIcon="whatsapp is-medium") {{ footerData.footer_top_2_label }}
+      prismic-rich-text(:field="footerData.footer_top_2_content")
     .column.has-background-secondary.has-background-secondary-3
-      JLink.has-text-primary(:linkUrl="{url:'mailto:farmacialibertapn@gmail.com'}" linkClasses="navbar-item" linkIcon="email is-medium") farmacialibertapn@gmail.com
-      div Vuoi richiedere <strong>ulteriori informazioni</strong>? Inviaci un’e-mail.
+      JLink.has-text-primary(:linkUrl="footerData.footer_top_3_link" linkClasses="navbar-item" linkIcon="email is-medium") {{ footerData.footer_top_3_label }}
+      prismic-rich-text(:field="footerData.footer_top_3_content")
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import { footerStore } from '../../store'
 
 @Component({
   name: 'the-footer-top'
 })
-export default class TheFooterTopComponent extends Vue {}
+export default class TheFooterTopComponent extends Vue {
+  get footerData(): any {
+    return footerStore.data
+  }
+}
 </script>
 
 <style lang="scss">
