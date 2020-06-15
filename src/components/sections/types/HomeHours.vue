@@ -3,13 +3,13 @@
     section.section.home-hours.has-gradient.has-gradient-left-to-right--blue.is-overlapped
       .content
         .columns
-          div.column.is-half
+          div.column.is-half.px-3
             .is-flex
               span.icon.jicon.mr-2
                 i(:class="primary.icon_title_left")
               prismic-rich-text(:field="primary.title_left")
             prismic-rich-text.red(:field="primary.content_left")
-          div.column.is-half
+          div.column.is-half.px-3
             .is-flex
               span.icon.jicon.mr-2
                 i(:class="primary.icon_title_right")

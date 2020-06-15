@@ -1,5 +1,5 @@
 <template lang="pug">
-    section.hero.is-medium.is-dark(:class="{ 'has-gradient has-gradient-left-to-right' : !noOverlay }"
+    section.hero.is-medium.is-dark(:class="[{ 'has-gradient has-gradient-left-to-right' : !noOverlay, 'no-overlay' : noOverlay, }]"
       v-if="data.show_header"
       :style="`background-image: url(${data.image.url})`",
       :title="data.image.alt")
