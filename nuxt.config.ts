@@ -16,6 +16,13 @@ const config: Configuration = {
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { innerHTML: "window.prismic = { endpoint: 'https://farmacialiberta.cdn.prismic.io/api/v2' };" },
+      {
+        src: 'https://static.cdn.prismic.io/prismic.min.js?new=true',
+        defer: true
+      }
     ]
   },
   loading: { color: '#fff' },
