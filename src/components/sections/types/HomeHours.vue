@@ -8,9 +8,9 @@
               span.icon.jicon.mr-2
                 i(:class="primary.icon_title_left")
               prismic-rich-text(:field="primary.title_left")
-            prismic-rich-text.red(:field="primary.content_left")
+            prismic-rich-text.hours(:field="primary.content_left")
           div.column.is-half.px-3
-            .is-flex
+            .is-flex.turni
               span.icon.jicon.mr-2
                 i(:class="primary.icon_title_right")
               prismic-rich-text(:field="primary.title_right")
@@ -47,18 +47,29 @@ export default class HomeHoursComponent extends Vue {
 
 <style lang="scss">
 .home-hours {
+    .hours {
+      ul {
+        @media screen and (min-width: 560px) {
+          display: inline-flex;
+          flex-flow: row wrap;
+          align-items: center;
+          justify-content: space-between;
+          strong {
+            display: block;
+            margin-left: 0;
+          }
+        }
+      }
+    }
   ul {
-    display: inline-flex;
-    flex-flow: row wrap;
-    width: 90%;
-    justify-content: space-between;
+    width: 95%;
     li {
       padding-left: 0!important;
       &:before {
         display: none!important;
       }
       strong {
-        display: block;
+        margin-left: 1rem;
       }
     }
   }
