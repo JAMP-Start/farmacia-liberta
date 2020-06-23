@@ -3,7 +3,7 @@
     .post__image
       figure.image-cover
         picture
-          prismic-image(:field="postData.thumbnail_image || postData.image")
+          prismic-image(:field="postData.thumbnail_image.url ? postData.thumbnail_image : postData.image")
     .post__content
       h4.post__title {{ $prismic.asText(postData.title) }}
       div.post__excerpt {{ $prismic.asText(postData.content) | excerpt }}
