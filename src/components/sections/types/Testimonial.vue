@@ -85,6 +85,10 @@ export default class TestimonialComponent extends Vue {
 </script>
 
 <style lang="scss" scoped>
+#testimonial {
+  padding-left: 0;
+  padding-right: 0;
+}
 .testimonial {
   figure {
     background-color: $primary;
@@ -96,8 +100,10 @@ export default class TestimonialComponent extends Vue {
     }
   }
   &__item {
-    max-width: 600px;
-    margin: 0 auto;
+    @media only screen and (min-width: 768px){
+      max-width: 600px;
+      margin: 0 auto;
+    }
     &__content {
       padding: 3rem 0 2rem 0;
       font-style: italic;
