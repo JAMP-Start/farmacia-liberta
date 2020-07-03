@@ -14,7 +14,7 @@
             span(aria-hidden="true")
             span(aria-hidden="true")
             span(aria-hidden="true")
-        .navbar-menu(:class="{ 'is-active': toggleMenu }")
+        .navbar-menu(:class="{ 'is-active': toggleMenu }" @click="toggleMenu = !toggleMenu")
           .navbar-end
             .navbar-item.is-hoverable(v-for="(item, index) in menu",
               :key="index",
