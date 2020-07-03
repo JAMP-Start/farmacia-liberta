@@ -21,8 +21,9 @@
     color: $white;
     border-color: $secondary;
     &:hover {
-      background-color: $primary;
-      border-color: $primary;
+      background-color: transparent;
+      border-color: $secondary;
+      color: $secondary;
     }
     &.is-outlined {
       background-color: transparent;
