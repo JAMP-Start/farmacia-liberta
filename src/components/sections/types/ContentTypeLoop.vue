@@ -97,7 +97,7 @@ export default class ContentTypeLoopComponent extends Vue {
   }
 
   get items(): any {
-    return this.data.items
+    return this.data.items.sort((a, b) => { return new Date(b.data.date).getTime() - new Date(a.data.date).getTime() })
   }
 
   @stringsModule.Getter('data')

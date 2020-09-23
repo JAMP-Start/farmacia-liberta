@@ -74,7 +74,7 @@ export default class BlogPostPage extends Vue {
     &__image {
       figure {
         box-shadow: 0px 10px 50px $primary-dark;
-        min-height: 60vh;
+        padding-bottom: calc(840 / 1500 * 100%);
       }
     }
   }
