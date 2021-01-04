@@ -59,8 +59,8 @@ export default class BlogPage extends Vue {
   postsByMonth(): any {
     const posts = this['posts']
     const months:any = []
-    for (let y = 2018; y <= 2030; y++) {
-      for (let m = 1; m <= 12; m++) {
+    for (let y = 2020; y <= 2030; y++) {
+      for (let m = 0; m <= 11; m++) {
         const month:any = posts.filter(item => moment(item.data.date).month() === m && moment(item.data.date).year() === y)
         if (month[0]) {
           const monthName = moment(month[0].data.date).month(m).locale('it-it').format('MMMM YYYY')
