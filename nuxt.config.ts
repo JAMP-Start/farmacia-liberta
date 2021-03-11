@@ -12,7 +12,7 @@ const config: Configuration = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'La Farmacia Libertà a Pordenone offre farmaci, omeopatia, farmacia veterinaria, prenotazione CUP, noleggio, autoanalisi e tanto altro. Ti aspettiamo!' },
-      { name: 'facebook-domain-verification', content: 'eolgttwpd52lpweg7wnghx5wmhosia'}
+      { hid: 'facebook-domain-verification', name: 'facebook-domain-verification', content: 'eolgttwpd52lpweg7wnghx5wmhosia' }
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap' },
