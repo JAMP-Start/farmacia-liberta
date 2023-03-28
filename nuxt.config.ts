@@ -53,7 +53,7 @@ const config: Configuration = {
     systemvars: true
   },
   env: {
-    SITE_NAME: process.env.SITE_NAME!,
+    SITENAME: process.env.SITENAME!,
     DOMAIN: process.env.DOMAIN!,
     DEFAULT_LOCALE: process.env.DEFAULT_LOCALE!
   },

@@ -15,7 +15,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 @Component({
   head() {
     return {
-      title: `${this.error.statusCode} ${this.error.message} | ${process.env.SITE_NAME}`
+      title: `${this.error.statusCode} ${this.error.message} | ${process.env.SITENAME}`
     }
   },
   props: ['error']
