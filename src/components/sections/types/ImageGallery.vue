@@ -167,7 +167,7 @@ export default class ImageGalleryComponent extends Vue {
     }
   }
 }
-#brands {
+#brands, #brandss {
   figure img {
     object-fit: contain;
   }
